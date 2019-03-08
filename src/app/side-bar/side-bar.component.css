@@ -1,0 +1,17 @@
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 66px;
+}
+
+.mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
+  text-align: left;
+  font-weight: initial;
+  margin-bottom: 0.2rem;
+}
+
+.active {
+  background-color: #416275;
+  color: white;
+}

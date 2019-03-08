@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.header-title {
+  height: 270px;
+  background-color: #416275;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title-inner {
+  text-align: center;
+}
+
+.mat-display-3 {
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+:host {
+  display: block;
+}

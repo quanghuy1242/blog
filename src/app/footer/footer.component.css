@@ -1,0 +1,21 @@
+:host {
+  background-color: #416275;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  text-align: center;
+  margin: 1rem
+}
+
+.mat-h1, .mat-h2 {
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 300;
+}

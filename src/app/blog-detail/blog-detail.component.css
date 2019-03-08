@@ -1,0 +1,8 @@
+mat-card {
+  border-top: 3px solid #416275;
+}
+
+.offset-top {
+  height: 65px;
+  margin-top: -65px;
+}

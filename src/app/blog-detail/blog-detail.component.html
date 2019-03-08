@@ -1,0 +1,13 @@
+<div id="{{blog.id}}" class='offset-top'></div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{blog.title}}</mat-card-title>
+    <mat-card-subtitle>{{blog.day.toDate() | date}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let smallContent of blog.content.split('\n')" [style.margin-bottom.rem]="0.7">
+      {{smallContent}}
+      <div *ngIf="!smallContent" [style.height.rem]="1"></div>
+    </div>
+  </mat-card-content>
+</mat-card>
