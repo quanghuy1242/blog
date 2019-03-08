@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-flat-button color="primary">Quang Huy</button>
+    <a routerLink="/home" mat-button class="main-title">Quang Huy</a>
     <span class="spacer"></span>
-    <a [attr.href]="facebookUrl" target="_blank" mat-flat-button color="primary">Facebook</a>
-    <a [attr.href]="instagramUrl" target="_blank" mat-flat-button color="primary">Instagram</a>
-    <a [attr.href]="twitterUrl" target="_blank" mat-flat-button color="primary">Twitter</a>
-    <a [attr.href]="wordpressUrl" target="_blank" mat-flat-button color="primary">Wordpress</a>
+    <a [attr.href]="facebookUrl" target="_blank" mat-button>Facebook</a>
+    <a [attr.href]="instagramUrl" target="_blank" mat-button>Instagram</a>
+    <a [attr.href]="twitterUrl" target="_blank" mat-button>Twitter</a>
+    <a [attr.href]="wordpressUrl" target="_blank" mat-button>Wordpress</a>
   </mat-toolbar-row>
 </mat-toolbar>

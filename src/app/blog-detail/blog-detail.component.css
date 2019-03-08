@@ -6,3 +6,7 @@ mat-card {
   height: 65px;
   margin-top: -65px;
 }
+
+.mat-body-1 {
+  line-height: 1.7;
+}

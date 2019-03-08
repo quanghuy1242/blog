@@ -6,7 +6,9 @@ import {
   MatTooltipModule,
   MatGridListModule,
   MatCardModule,
-  MatListModule
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatRippleModule
 } from '@angular/material'
 
 @NgModule({
@@ -17,7 +19,9 @@ import {
     MatTooltipModule,
     MatGridListModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatRippleModule
   ]
 })
 

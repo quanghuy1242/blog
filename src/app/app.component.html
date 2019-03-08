@@ -1,9 +1,3 @@
 <app-navigation class="mat-elevation-z5"></app-navigation>
-<div class="fixed-adjust">
-  <app-header-title></app-header-title>
-  <div class="side-bar-content">
-    <app-side-bar [blogs]="appBlog.blogs"></app-side-bar>
-    <app-blog #appBlog></app-blog>
-  </div>
-</div>
+<router-outlet></router-outlet>
 <app-footer></app-footer>

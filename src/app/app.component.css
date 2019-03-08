@@ -2,29 +2,6 @@
   display: block;
 }
 
-.fixed-adjust {
-  padding-top: 64px;
-}
-
-mat-grid-tile {
-  background: lightblue;
-}
-
-.side-bar-content {
-  display: flex;
-  flex: 1 1 auto;
-}
-
-app-side-bar {
-  display: block;
-  min-width: 300px;
-  padding: 1rem;
-}
-
-app-blog {
-  padding: 1rem;
-}
-
 app-navigation {
   z-index: 10;
 }

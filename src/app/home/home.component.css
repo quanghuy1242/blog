@@ -1,0 +1,23 @@
+.side-bar-content {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+app-side-bar {
+  display: block;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+app-blog {
+  padding: 1rem;
+}
+
+mat-spinner {
+  margin: 1rem auto;
+}
+
+:host {
+  display: block;
+  padding-top: 64px;
+}

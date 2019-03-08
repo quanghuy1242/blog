@@ -10,3 +10,7 @@
   width: 100%;
   position: fixed;
 }
+
+.main-title {
+  font-size: large;
+}
