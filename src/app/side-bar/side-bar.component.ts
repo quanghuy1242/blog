@@ -8,9 +8,14 @@ import { Blog } from '../models/blog.model';
 })
 export class SideBarComponent implements OnInit {
   @Input() blogs: Blog[];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  scrollTo(id: string): void {
+    document.querySelector(`app-blog-detail #${id}`).scrollIntoView();
   }
 
 }
