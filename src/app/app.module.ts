@@ -17,6 +17,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     SideBarComponent,
     FooterComponent,
     HomeComponent,
+    BlogPageComponent,
   ],
   imports: [
     BrowserModule,

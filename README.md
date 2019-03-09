@@ -6,7 +6,7 @@ Blog
 `npm run build`
 
 # Todo
-- Page link for each post
+- ~~Page link for each post~~
 - Add comment, share features
 - Add About me page
 - Optimize UI for mobile devices

@@ -1,0 +1,12 @@
+<div *ngIf="blog">
+  <div class="title mat-h1">
+    <div>{{blog.title}}</div>
+    <div class="mat-subheading-1">{{blog.day.toDate() | date}}</div>
+  </div>
+  <div class="content">
+    <div *ngFor="let smallContent of blog.content.split('\n')" class="mat-h4">
+      {{smallContent}}
+      <div *ngIf="!smallContent" [style.height.rem]="1"></div>
+    </div>
+  </div>
+</div>

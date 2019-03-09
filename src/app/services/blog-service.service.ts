@@ -15,6 +15,7 @@ import {
 })
 export class BlogServiceService {
   blogCollection: AngularFirestoreCollection<Blog>;
+  blogDoc: AngularFirestoreDocument<Blog>;
 
   constructor(
     private readonly db: AngularFirestore
@@ -30,6 +31,17 @@ export class BlogServiceService {
         return { id, ...data };
       }))
     );
+  }
+
+  /** GET blog by id */
+  getBlog(id: string): Observable<Blog> {
+    return this.db.doc<Blog>('blogs/' + id).snapshotChanges().pipe(
+      map(action => {
+        const data = action.payload.data();
+        const id = action.payload.id;
+        return { id, ...data }
+      })
+    )
   }
 
 }

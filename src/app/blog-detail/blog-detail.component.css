@@ -10,3 +10,19 @@ mat-card {
 .mat-body-1 {
   line-height: 1.7;
 }
+
+mat-card-title {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+mat-card-title:hover {
+  color: #416275;
+}
+
+mat-icon {
+  font-size: 20px;
+}

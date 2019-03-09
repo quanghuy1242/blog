@@ -95,6 +95,10 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/icon
+
+@angular/material/menu
+
 @angular/material/progress-spinner
 
 @angular/material/toolbar

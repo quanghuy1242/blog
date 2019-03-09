@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding-top: 64px;
+}
+
+.title {
+  height: 80px;
+  background-color: #416275;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-left: 1.5rem;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.content {
+  margin: 1.5rem;
+}

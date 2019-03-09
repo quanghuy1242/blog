@@ -8,7 +8,8 @@ import {
   MatCardModule,
   MatListModule,
   MatProgressSpinnerModule,
-  MatRippleModule
+  MatRippleModule,
+  MatMenuModule,
 } from '@angular/material'
 
 @NgModule({
@@ -21,7 +22,8 @@ import {
     MatCardModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatRippleModule
+    MatRippleModule,
+    MatMenuModule
   ]
 })
 
