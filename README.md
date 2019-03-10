@@ -1,4 +1,4 @@
-# Blog
+﻿# Blog
 Blog
 
 # Build 
@@ -13,6 +13,6 @@ Blog
 - Add comment, ~~share features~~
 - Add About me page
 - ~~Optimize UI for mobile devices~~
-- Change icon
+- ~~Change icon~~
 - ~~Add scrollspy when scroll post~~
 - ~~Add sload more button(4 post/page)~~
