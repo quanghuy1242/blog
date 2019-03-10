@@ -1,1 +1,2 @@
 <app-blog-detail *ngFor="let blog of blogs" [blog]="blog"></app-blog-detail>
+<button *ngIf="c < blogService.length" mat-raised-button color='primary' (click)="loadMore()">Load more</button>

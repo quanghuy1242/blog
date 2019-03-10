@@ -17,8 +17,6 @@ export class AppComponent implements OnInit {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    this.currentUrl = location.path();
-    console.log(this.currentUrl);
   }
 
   ngOnInit(): void {

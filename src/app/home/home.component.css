@@ -17,11 +17,6 @@ mat-spinner {
   margin: 1rem auto;
 }
 
-/* :host {
-  display: block;
-  padding-top: 64px;
-} */
-
 .sidenav-container {
   flex: 1;
 }

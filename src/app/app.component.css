@@ -25,18 +25,19 @@ mat-sidenav {
     display: block;
     padding-top: 74px;
   }
+
+  .mat-drawer-inner-container {
+    position: initial;
+    top: inherit;
+  }
 }
 
-.mat-drawer-container {
-  /* display: flex;
-  margin-left: 0 !important; */
-}
-
-.mat-drawer {
-  /* position: sticky;
+.mat-drawer-inner-container {
+  /* height: auto; */
+  position: sticky;
   top: 64px;
-  float: left;
-  height: 600px;
-  align-self: flex-start; */
-  
+}
+
+.mat-drawer-content {
+  min-height: 68vh;
 }

@@ -16,18 +16,25 @@ import {
 export class BlogServiceService {
   blogCollection: AngularFirestoreCollection<Blog>;
   blogDoc: AngularFirestoreDocument<Blog>;
+  length: number = 0;
 
   constructor(
     private readonly db: AngularFirestore
   ) { }
   
   /** GET all blogs from server */
-  getBlogs(): Observable<Blog[]> {
-    this.blogCollection = this.db.collection<Blog>("blogs");
+  getBlogs(number: number): Observable<Blog[]> {
+    if (number === -1) {
+      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc'));
+    }
+    else {
+      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number));
+    }
     return this.blogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Blog;
         const id = a.payload.doc.id;
+        // this.length++;
         return { id, ...data };
       }))
     );
@@ -42,6 +49,12 @@ export class BlogServiceService {
         return { id, ...data }
       })
     )
+  }
+
+  /** GET length of collection */
+  getBlogsLength(): void {
+    this.blogCollection = this.db.collection<Blog>("blogs");
+    this.blogCollection.valueChanges().subscribe(c => this.length = c.length);
   }
 
 }

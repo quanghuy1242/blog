@@ -19,3 +19,16 @@ html {
 .mat-drawer, .mat-drawer-inner-container, .mat-drawer-container {
   overflow: initial !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .mat-drawer-inner-container {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
+
+.mat-drawer-inner-container {
+  height: auto !important;
+  position: sticky;
+  top: 64px;
+}

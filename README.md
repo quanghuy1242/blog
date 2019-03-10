@@ -2,7 +2,10 @@
 Blog
 
 # Build 
-`ng build --prod --output-path docs --base-href "https://quanghuy1242.github.io/blog/"`
+## Cách 1:
+`ng build --prod --output-path docs --base-href "https://quanghuy1242.github.io/blog/"`  
+
+## Cách 2:
 `npm run build`
 
 # Todo
@@ -12,4 +15,4 @@ Blog
 - ~~Optimize UI for mobile devices~~
 - Change icon
 - ~~Add scrollspy when scroll post~~
-- Add sload more button(4 post/page)
+- ~~Add sload more button(4 post/page)~~
