@@ -1,8 +1,6 @@
 .nav-wrapper {
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 66px;
 }
 
 .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
@@ -14,4 +12,9 @@
 .active {
   background-color: #416275;
   color: white;
+}
+
+:host {
+  /* position: sticky;
+  top: 100px; */
 }

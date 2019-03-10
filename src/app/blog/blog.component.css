@@ -2,3 +2,7 @@ app-blog-detail {
   display: block;
   margin-bottom: 1rem;
 }
+
+:host {
+  display: block;
+}

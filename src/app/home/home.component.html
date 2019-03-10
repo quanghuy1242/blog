@@ -1,6 +1,7 @@
-<app-header-title></app-header-title>
 <mat-spinner *ngIf="!appBlog.blogs"></mat-spinner>
-<div class="side-bar-content">
+<app-blog #appBlog></app-blog>
+<!-- <app-side-bar [blogs]="appBlog.blogs"></app-side-bar> -->
+<!-- <div class="side-bar-content">
   <app-side-bar [blogs]="appBlog.blogs"></app-side-bar>
   <app-blog #appBlog></app-blog>
-</div>
+</div> -->

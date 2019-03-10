@@ -14,3 +14,27 @@
 .main-title {
   font-size: large;
 }
+
+mat-toolbar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.start {
+  flex: 1;
+}
+
+.end {
+  justify-self: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-toolbar-row {
+    flex-direction: column;
+  }
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    min-height: 75px;
+  }
+}

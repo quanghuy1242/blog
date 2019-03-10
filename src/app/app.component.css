@@ -5,3 +5,38 @@
 app-navigation {
   z-index: 10;
 }
+
+.wrapper {
+  display: block;
+  padding-top: 64px;
+}
+
+mat-sidenav {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.isMobile mat-sidenav {
+  margin-top: 75px;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    display: block;
+    padding-top: 74px;
+  }
+}
+
+.mat-drawer-container {
+  /* display: flex;
+  margin-left: 0 !important; */
+}
+
+.mat-drawer {
+  /* position: sticky;
+  top: 64px;
+  float: left;
+  height: 600px;
+  align-self: flex-start; */
+  
+}

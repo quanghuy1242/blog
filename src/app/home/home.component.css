@@ -5,7 +5,7 @@
 
 app-side-bar {
   display: block;
-  min-width: 300px;
+  min-width: 100px;
   padding: 1rem;
 }
 
@@ -17,7 +17,15 @@ mat-spinner {
   margin: 1rem auto;
 }
 
-:host {
+/* :host {
   display: block;
   padding-top: 64px;
+} */
+
+.sidenav-container {
+  flex: 1;
+}
+
+:host {
+  display: flex;
 }
