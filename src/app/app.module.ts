@@ -11,7 +11,7 @@ import { HeaderTitleComponent } from './header-title/header-title.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { CopyClipboardDirective } from './directives/copy-clipboard.directive';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CopyClipboardDirective } from './directives/copy-clipboard.directive';
     HomeComponent,
     BlogPageComponent,
     CopyClipboardDirective,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import { CopyClipboardDirective } from './directives/copy-clipboard.directive';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+    { provide: FirestoreSettingsToken, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

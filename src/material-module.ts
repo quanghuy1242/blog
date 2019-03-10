@@ -11,7 +11,8 @@ import {
   MatRippleModule,
   MatMenuModule,
   MatSnackBarModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatTabsModule
 } from '@angular/material'
 
 @NgModule({
@@ -27,7 +28,8 @@ import {
     MatRippleModule,
     MatMenuModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule
   ]
 })
 
