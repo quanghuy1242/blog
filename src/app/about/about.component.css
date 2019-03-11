@@ -22,11 +22,10 @@
 .art-cover-name--inner {
   text-align: center;
   margin-top: 50px;
-  /* padding-left: 100px; */
 }
 
 .name-title {
-  border-bottom: 1px solid #41627579;
+  border-bottom: 1px solid rgba(0,0,0,.12);
   margin: 1rem 1rem 0rem 1rem;
   padding-bottom: 1rem;
   display: flex;
@@ -37,11 +36,13 @@
 }
 
 .content-wrapper {
-  /* display: flex;
-  flex-direction: row; */
   margin: 0rem 1rem 1rem 1rem;
 }
 
-.about-blog-credit {
-  /* width: 66%; */
+.mat-subheader {
+  height: 20px;
+}
+
+.mat-h2 {
+  font-weight: bold !important;
 }

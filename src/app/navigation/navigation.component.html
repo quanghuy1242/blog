@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <div class="start">
-      <button mat-icon-button (click)="snav.toggle()" *ngIf="isMobile"><mat-icon>menu</mat-icon></button>
+      <button class="mobile-button" mat-icon-button (click)="snav.toggle()" *ngIf="isMobile"><mat-icon>menu</mat-icon></button>
       <a routerLink="/home" mat-button class="main-title">Quang Huy</a>
     </div>
     <div class="end">
@@ -10,7 +10,5 @@
       <a [attr.href]="twitterUrl" target="_blank" mat-button>Twitter</a>
       <a [attr.href]="wordpressUrl" target="_blank" mat-button>Wordpress</a>
     </div>
-    
-    <!-- <span class="spacer"></span> -->
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-page',
@@ -15,7 +15,8 @@ export class BlogPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogServiceService,
-    private location: Location
+    private titleService: Title
+    
   ) { }
 
   ngOnInit() {
@@ -24,6 +25,9 @@ export class BlogPageComponent implements OnInit {
 
   getBlog(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.blogService.getBlog(id).subscribe(blog => this.blog = blog);
+    this.blogService.getBlog(id).subscribe(blog => {
+      this.blog = blog
+      this.titleService.setTitle(blog.title + ' - Quang Huy');
+    });
   }
 }

@@ -25,6 +25,6 @@ export class BlogDetailComponent implements OnInit {
   }
 
   onCopied(): void {
-    this.snackBar.open('The link of this post has been copied to clip board', 'Close', { duration: 2500 });
+    this.snackBar.open('The link of this post is copied to clipboard', 'Close', { duration: 2500 });
   }
 }
