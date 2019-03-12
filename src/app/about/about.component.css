@@ -46,3 +46,8 @@
 .mat-h2 {
   font-weight: bold !important;
 }
+
+.mat-list-base .mat-subheader {
+  height: initial;
+  line-height: 16px;
+}

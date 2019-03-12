@@ -14,7 +14,9 @@ import {
   MatSnackBarModule,
   MatSidenavModule,
   MatTabsModule,
-  MatTreeModule
+  MatTreeModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material'
 
 @NgModule({
@@ -33,7 +35,9 @@ import {
     MatSnackBarModule,
     MatSidenavModule,
     MatTabsModule,
-    MatTreeModule
+    MatTreeModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 

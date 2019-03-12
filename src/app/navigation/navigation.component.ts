@@ -9,10 +9,28 @@ export class NavigationComponent implements OnInit {
   @Input() snav: any;
   @Input() isMobile: boolean;
 
-  facebookUrl: string = "https://www.facebook.com/quanghuy124";
-  instagramUrl: string = "https://www.instagram.com/quanghuy1242";
-  twitterUrl: string = "https://twitter.com/quanghuy1242";
-  wordpressUrl: string = "https://quanghuy1242.wordpress.com";
+  urlSocials = [
+    {
+      name : "Facebook",
+      url: "https://www.facebook.com/quanghuy124",
+      logo: "assets/logos/facebook.svg"
+    },
+    {
+      name : "Instagram",
+      url: "https://www.instagram.com/quanghuy1242",
+      logo: "assets/logos/instagram.svg"
+    },
+    {
+      name : "Twitter",
+      url: "https://twitter.com/quanghuy1242",
+      logo: "assets/logos/twitter.svg"
+    },
+    {
+      name : "Wordpress",
+      url: "https://quanghuy1242.wordpress.com",
+      logo: "assets/logos/wordpress.svg"
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

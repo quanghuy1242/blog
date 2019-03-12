@@ -13,6 +13,19 @@ import {Router} from "@angular/router"
 export class BlogPageComponent implements OnInit {
   blog: Blog;
 
+  comments = [
+    {
+      name: "Quang Huy",
+      date: "15/5/2019",
+      comment: "Hay quá đi!"
+    },
+    {
+      name: "Minh Chánh",
+      date: "17/5/2019",
+      comment: "Chưa bao giờ đọc cái gì hay đến như vậy!"
+    }
+  ]
+
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogServiceService,

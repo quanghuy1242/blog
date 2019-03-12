@@ -5,10 +5,15 @@
       <a routerLink="/home" mat-button class="main-title">Quang Huy</a>
     </div>
     <div class="end">
-      <a [attr.href]="facebookUrl" target="_blank" mat-button>Facebook</a>
-      <a [attr.href]="instagramUrl" target="_blank" mat-button>Instagram</a>
-      <a [attr.href]="twitterUrl" target="_blank" mat-button>Twitter</a>
-      <a [attr.href]="wordpressUrl" target="_blank" mat-button>Wordpress</a>
+      <button mat-button [matMenuTriggerFor]="menu">Social</button>
+      <mat-menu #menu="matMenu">
+        <a *ngFor="let social of urlSocials" [attr.href]="social.url" target="_blank" mat-menu-item>
+          <img [attr.src]="social.logo" alt="facebook logo" class="logo-menu">
+          {{social.name}}
+        </a>
+      </mat-menu>
+      <button mat-button>Sign in</button>
+      <button mat-button>Sign up</button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

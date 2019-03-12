@@ -46,3 +46,13 @@ mat-toolbar-row {
     margin-left: -16px !important;
   }
 }
+
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.logo-menu {
+  height: 23px;
+  margin-right: 0.5rem;
+}

@@ -26,3 +26,7 @@ mat-card-title:hover {
 mat-icon {
   font-size: 20px;
 }
+
+mat-form-field {
+  width: 100% !important;
+}
