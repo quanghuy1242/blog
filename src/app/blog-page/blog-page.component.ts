@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
 import { Title } from '@angular/platform-browser';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-blog-page',
@@ -15,8 +16,8 @@ export class BlogPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogServiceService,
-    private titleService: Title
-    
+    private titleService: Title,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,8 +27,12 @@ export class BlogPageComponent implements OnInit {
   getBlog(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.blogService.getBlog(id).subscribe(blog => {
-      this.blog = blog
-      this.titleService.setTitle(blog.title + ' - Quang Huy');
+      if (!blog.title) {
+        this.router.navigate(['/404']);
+      } else {
+        this.blog = blog;
+        this.titleService.setTitle(blog.title + ' - Quang Huy');
+      }
     });
   }
 }

@@ -8,10 +8,10 @@
 
 .wrapper {
   text-align: center;
-  margin: 1rem
+  margin: 0.7rem
 }
 
-.mat-h1, .mat-h2 {
+.mat-h1, .mat-h2, .mat-h3 {
   margin-bottom: 0.5rem;
 }
 

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CdkTreeModule } from '@angular/cdk/tree'
 import {
   MatToolbarModule,
   MatIconModule,
@@ -12,11 +13,13 @@ import {
   MatMenuModule,
   MatSnackBarModule,
   MatSidenavModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTreeModule
 } from '@angular/material'
 
 @NgModule({
   exports: [
+    CdkTreeModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -29,7 +32,8 @@ import {
     MatMenuModule,
     MatSnackBarModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTreeModule
   ]
 })
 

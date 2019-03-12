@@ -23,6 +23,8 @@ import { HomeComponent } from './home/home.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { CopyClipboardDirective } from './directives/copy-clipboard.directive';
 import { AboutComponent } from './about/about.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { AboutComponent } from './about/about.component';
     BlogPageComponent,
     CopyClipboardDirective,
     AboutComponent,
+    SideNavComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
