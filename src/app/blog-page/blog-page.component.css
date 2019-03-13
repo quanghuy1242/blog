@@ -20,23 +20,6 @@
   margin: 1.5rem;
 }
 
-mat-card {
-  margin: 0 1.5rem 0.5rem 1.5rem;
-}
-
-.comment-card-header-image {
-  background-color: #416275;
-}
-
-.comment-card {
-  /* background-color: #fafafa; */
-  box-shadow: none;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 16px 0 0 0;
-}
-
 .center {
   display: flex; 
   align-items: center;
@@ -49,12 +32,4 @@ mat-card {
 .right {
   margin-right: 1rem;
   margin-bottom: 1rem;
-}
-
-.comment-section-b {
-  display: flex;
-  flex-direction: column;
-  border-top: 3px solid #416275;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
 }

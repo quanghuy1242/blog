@@ -1,0 +1,13 @@
+.comment-card-header-image {
+  background-color: #416275;
+}
+
+.comment-card {
+  /* background-color: #fafafa; */
+  box-shadow: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  /* padding: 16px 0 0 0; */
+}

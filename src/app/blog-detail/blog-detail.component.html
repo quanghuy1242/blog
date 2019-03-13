@@ -18,14 +18,11 @@
       <mat-icon>insert_comment</mat-icon>
       Comment
     </button>
-    <button mat-button [matMenuTriggerFor]="shareMenu">
-      <mat-icon>share</mat-icon>
-      Share
-    </button>
-    <mat-menu #shareMenu="matMenu">
-      <button mat-menu-item (click)="share('facebook')">Facebook</button>
-      <button mat-menu-item (click)="share('twitter')">Twitter</button>
-      <button mat-menu-item [copy-clipboard]="urlShared + blog.id" (copied)="onCopied()">Copy link</button>
-    </mat-menu>
+    <app-button-share-menu 
+      [blogId]="blog.id"
+      [iconRev]="'share'"
+      [textRev]="'Share'"
+      [isIcon]="true">
+    </app-button-share-menu>
   </mat-card-actions>
 </mat-card>

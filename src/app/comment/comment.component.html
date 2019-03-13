@@ -1,0 +1,4 @@
+<mat-card class="comment-section">
+  <app-comment-submit></app-comment-submit>
+  <app-comment-item *ngFor="let comment of comments" [comment]="comment"></app-comment-item>
+</mat-card>

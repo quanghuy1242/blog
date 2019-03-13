@@ -5,7 +5,7 @@
       <a routerLink="/home" mat-button class="main-title">Quang Huy</a>
     </div>
     <div class="end">
-      <button mat-button [matMenuTriggerFor]="menu">Social</button>
+      <button mat-button [matMenuTriggerFor]="menu" matTooltip="Find me on the Internet">Find me</button>
       <mat-menu #menu="matMenu">
         <a *ngFor="let social of urlSocials" [attr.href]="social.url" target="_blank" mat-menu-item>
           <img [attr.src]="social.logo" alt="facebook logo" class="logo-menu">

@@ -1,0 +1,13 @@
+<button *ngIf="!isIcon" mat-icon-button [matMenuTriggerFor]="shareMenu">
+  <mat-icon>{{iconRev}}</mat-icon>
+  {{textRev}}
+</button>
+<button *ngIf="isIcon" mat-button [matMenuTriggerFor]="shareMenu">
+  <mat-icon>{{iconRev}}</mat-icon>
+  {{textRev}}
+</button>
+<mat-menu #shareMenu="matMenu">
+  <button mat-menu-item (click)="share('facebook')">Facebook</button>
+  <button mat-menu-item (click)="share('twitter')">Twitter</button>
+  <button mat-menu-item [copy-clipboard]="urlShared + blogId" (copied)="onCopied()">Copy link</button>
+</mat-menu>

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Blog } from '../models/blog.model';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-blog-detail',
@@ -10,21 +9,8 @@ import { MatSnackBar } from '@angular/material';
 export class BlogDetailComponent implements OnInit {
   @Input() blog: Blog;
 
-  urlShared: string = window.location.origin + '/blog/post/';
-
-  constructor(
-    private snackBar: MatSnackBar
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  share(name: string): void {
-    const shareUrl = name === 'facebook' ? 'https://www.facebook.com/sharer/sharer.php?u=' : 'https://twitter.com/intent/tweet?text=';
-    window.open(shareUrl + this.urlShared + this.blog.id, '_blank');
-  }
-
-  onCopied(): void {
-    this.snackBar.open('The link of this post is copied to clipboard', 'Close', { duration: 2500 });
   }
 }

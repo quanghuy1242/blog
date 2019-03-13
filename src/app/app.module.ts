@@ -25,6 +25,10 @@ import { CopyClipboardDirective } from './directives/copy-clipboard.directive';
 import { AboutComponent } from './about/about.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CommentItemComponent } from './comment-item/comment-item.component';
+import { CommentComponent } from './comment/comment.component';
+import { ButtonShareMenuComponent } from './button-share-menu/button-share-menu.component';
+import { CommentSubmitComponent } from './comment-submit/comment-submit.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     SideNavComponent,
     NotFoundComponent,
+    CommentItemComponent,
+    CommentComponent,
+    ButtonShareMenuComponent,
+    CommentSubmitComponent,
   ],
   imports: [
     BrowserModule,

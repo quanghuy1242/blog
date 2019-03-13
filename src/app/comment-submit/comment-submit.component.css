@@ -1,0 +1,36 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.right {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-input-submit {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+}
+
+.comment-card-header-image:host {
+  width: 53px;
+}
+
+.comment-submit {
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.comment-card-header-image {
+  background-color: #416275;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0px;
+}
+
+.comment-section {
+  height: 50px;
+  resize: none;
+}
