@@ -26,10 +26,10 @@ export class RouteFlatNode {
  */
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
-  "About me": "/about",
   "Research": {
     "Face Detection": "/research/face-detection"
-  }
+  },
+  "About me": "/about"
 });
 
 @Injectable()

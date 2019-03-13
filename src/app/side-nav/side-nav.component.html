@@ -1,9 +1,3 @@
-<!-- <mat-nav-list>
-  <a mat-list-item routerLink="/home">Blogs</a>
-</mat-nav-list>
-<mat-nav-list>
-  <a mat-list-item routerLink="/about">About me</a>
-</mat-nav-list> -->
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
     <a routerLink="{{node.url}}" mat-button matTreeNodeToggle class="tree-item-button">
