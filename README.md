@@ -13,5 +13,8 @@ Blog
 - ~~Add scrollspy when scroll post~~ **(Drop)**
 - ~~Add sload more button(4 post/page)~~
 - Add search field
-- Add Scrolline, share button at blog page
+- Add Scrolline, ~~share button at blog page~~
 - Support rich content with Administration page
+- Welcome dialog
+- Add 'first published', 'category' property at blog
+- 
