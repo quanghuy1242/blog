@@ -29,6 +29,7 @@ import { CommentItemComponent } from './comment-item/comment-item.component';
 import { CommentComponent } from './comment/comment.component';
 import { ButtonShareMenuComponent } from './button-share-menu/button-share-menu.component';
 import { CommentSubmitComponent } from './comment-submit/comment-submit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CommentSubmitComponent } from './comment-submit/comment-submit.componen
     CommentComponent,
     ButtonShareMenuComponent,
     CommentSubmitComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

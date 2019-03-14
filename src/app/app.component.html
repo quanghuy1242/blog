@@ -2,7 +2,7 @@
 <div class="wrapper">
   <app-header-title *ngIf='location.path() === "/home"'></app-header-title>
   <mat-sidenav-container class="sidenav-container" [hasBackdrop]='false' [class.isMobile]="mobileQuery.matches">
-    <mat-sidenav #snav opened="{{!mobileQuery.matches}}" [mode]="mobileQuery.matches ? 'over' : 'side'"
+    <mat-sidenav #snav opened="{{!hideSideBar}}" [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches">
       <app-side-nav></app-side-nav>
     </mat-sidenav>

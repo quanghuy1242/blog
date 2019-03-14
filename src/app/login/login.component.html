@@ -1,0 +1,22 @@
+<div class="login-wrapper">
+  <div class="carousel mat-elevation-z5">
+
+  </div>
+  <div class="login-form mat-elevation-z5 center">
+    <h1 class="mat-display-3 title">LOGIN</h1>
+    <form action="" class="form">
+      <mat-form-field>
+        <input matInput placeholder="Email">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password">
+        <mat-icon matSuffix (click)="hide = !hide">visibility_off</mat-icon>
+      </mat-form-field>
+      <div style="display: flex">
+        <div class="spacer"></div>
+        <button mat-raised-button color="primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

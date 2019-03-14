@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
 import { Title } from '@angular/platform-browser';
-import {Router} from "@angular/router"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-blog-page',

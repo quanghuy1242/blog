@@ -9,6 +9,7 @@ app-navigation {
 .wrapper {
   display: block;
   padding-top: 64px;
+  height: calc(100vh - 64px);
 }
 
 mat-sidenav {
@@ -20,10 +21,15 @@ mat-sidenav {
   margin-top: 75px;
 }
 
+mat-sidenav-container {
+  min-height: calc(100vh - 64px - 85px);
+}
+
 @media only screen and (max-width: 600px) {
   .wrapper {
     display: block;
     padding-top: 74px;
+    height: calc(100vh - 74px);
   }
 
   .mat-drawer-inner-container {

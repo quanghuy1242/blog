@@ -1,5 +1,10 @@
 body {
   margin: 0 auto;
+  height: 100vh;
+}
+
+app-root {
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -41,4 +46,8 @@ mat-tab-body {
 .center {
   display: flex; 
   align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

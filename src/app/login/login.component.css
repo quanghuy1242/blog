@@ -1,0 +1,46 @@
+.login-wrapper {
+  width: 700px;
+  height: 470px;
+  display: flex;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77.5vh;
+  border-radius: 40px;
+}
+
+.carousel {
+  width: 300px;
+  background-color: #416275;
+  height: 100%;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.login-form {
+  background-color: #fff;
+  width: calc(400px - 2rem);
+  height: calc(100% - 2rem);
+  padding: 1rem;
+  border-radius: 0px 4px 4px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  font-weight: 500;
+  color: #416275;
+}
+
+form mat-icon {
+  color: #416275;
+}
