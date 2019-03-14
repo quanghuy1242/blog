@@ -16,4 +16,5 @@ Blog
 - Add Scrolline, ~~share button at blog page~~
 - Support rich content with Administration page
 - Welcome dialog
-- Add 'first published' property at blog
+- Add 'first published', 'category' property at blog
+- 
