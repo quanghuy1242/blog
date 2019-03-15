@@ -16,7 +16,8 @@ import {
   MatTabsModule,
   MatTreeModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 } from '@angular/material'
 
 @NgModule({
@@ -37,7 +38,8 @@ import {
     MatTabsModule,
     MatTreeModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ]
 })
 

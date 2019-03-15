@@ -6,16 +6,18 @@
     <h1 class="mat-display-3 title">LOGIN</h1>
     <form action="" class="form">
       <mat-form-field>
-        <input matInput placeholder="Email">
+        <input matInput placeholder="Email" [formControl]="email" required>
         <mat-icon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Password">
-        <mat-icon matSuffix (click)="hide = !hide">visibility_off</mat-icon>
+        <input matInput placeholder="Password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="password.invalid">{{getPassError()}}</mat-error>
       </mat-form-field>
       <div style="display: flex">
         <div class="spacer"></div>
-        <button mat-raised-button color="primary">Login</button>
+        <button #btn mat-raised-button color="primary" (click)="login()" [disabled]="email.invalid || password.invalid || loginActive">Login</button>
       </div>
     </form>
   </div>

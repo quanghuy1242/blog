@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RepoService } from '../services/repo.service';
-import { Repo } from '../models/repo.model';
 import { Observable, Subject } from 'rxjs';
 
 @Component({

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   routeHideSideBar = [
     '/login', 
     '/register',
+    '/404'
   ];
   hideSideBar: boolean = true;
 

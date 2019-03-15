@@ -1,7 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +13,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderTitleComponent } from './header-title/header-title.component';
 
 import { environment } from '../environments/environment';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -30,6 +33,9 @@ import { CommentComponent } from './comment/comment.component';
 import { ButtonShareMenuComponent } from './button-share-menu/button-share-menu.component';
 import { CommentSubmitComponent } from './comment-submit/comment-submit.component';
 import { LoginComponent } from './login/login.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { DialogInfoComponent } from './dialog-info/dialog-info.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -51,20 +57,28 @@ import { LoginComponent } from './login/login.component';
     ButtonShareMenuComponent,
     CommentSubmitComponent,
     LoginComponent,
+    CarouselComponent,
+    DialogInfoComponent,
+  ],
+  entryComponents: [
+    DialogInfoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     { provide: FirestoreSettingsToken, useValue: {} },
-    Title
+    Title,
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} }
   ],
   bootstrap: [AppComponent]
 })

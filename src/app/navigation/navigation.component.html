@@ -12,8 +12,10 @@
           {{social.name}}
         </a>
       </mat-menu>
-      <button mat-button routerLink="/login">Login</button>
-      <button mat-button routerLink="/register">Register</button>
+      <button *ngIf="!authService.isLoggedIn" mat-button routerLink="/login">Login</button>
+      <button *ngIf="!authService.isLoggedIn" mat-button routerLink="/register">Register</button>
+      <button *ngIf="authService.isLoggedIn" mat-flat-button>{{authService.UserInfo().email.split('@')[0]}}</button>
+      <button *ngIf="authService.isLoggedIn" mat-button (click)="authService.logout()">Logout</button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
