@@ -1,11 +1,11 @@
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+<mat-tree #tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
     <a routerLink="{{node.url}}" mat-button matTreeNodeToggle class="tree-item-button">
       <mat-icon></mat-icon>
       {{node.name}}
     </a>
   </mat-tree-node>
-  <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+  <mat-tree-node *matTreeNodeDef="let node;when: hasChild" opened matTreeNodePadding>
     <a mat-button matTreeNodeToggle class="tree-item-button">
       <mat-icon>
         {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Comment } from '../models/comment.model';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-comment',
@@ -6,22 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
-  comments = [
-    {
-      name: "Quang Huy",
-      date: "15/5/2019",
-      comment: "Hay quá đi!"
-    },
-    {
-      name: "Minh Chánh",
-      date: "17/5/2019",
-      comment: "Chưa bao giờ đọc cái gì hay đến như vậy!"
-    }
-  ]
+  @Input() comments: Comment[];
+  loadComment: boolean = true;
+  length: number;
   
-  constructor() { }
+  constructor(public authService: AuthService) {
+  }
 
   ngOnInit() {
   }
-
 }

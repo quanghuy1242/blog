@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
+import { Comment } from '../models/comment.model';
 import { Title } from '@angular/platform-browser';
 import { Router } from "@angular/router"
+import { CommentService } from '../services/comment.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -12,20 +15,25 @@ import { Router } from "@angular/router"
 })
 export class BlogPageComponent implements OnInit {
   blog: Blog;
+  comments: Comment[];
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogServiceService,
+    private commentService: CommentService,
     private titleService: Title,
-    private router: Router
+    private router: Router,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.getBlog();
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.getBlog(this.id);
+    this.getCommentsBlog(this.id);
   }
 
-  getBlog(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+  getBlog(id: string): void {
     this.blogService.getBlog(id).subscribe(blog => {
       if (!blog.title) {
         this.router.navigate(['/404']);
@@ -34,5 +42,11 @@ export class BlogPageComponent implements OnInit {
         this.titleService.setTitle(blog.title + ' - Quang Huy');
       }
     });
+  }
+
+  getCommentsBlog(id: string): void {
+    this.commentService.getCommentss(this.id).subscribe(comments => {
+      this.comments = comments;
+    })
   }
 }

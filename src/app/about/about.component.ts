@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RepoService } from '../services/repo.service';
 import { Observable, Subject } from 'rxjs';
+import { Repo } from '../models/repo.model';
 
 @Component({
   selector: 'app-about',
@@ -13,12 +14,12 @@ export class AboutComponent implements OnInit {
   instagramUrl: string = "https://www.instagram.com/quanghuy1242";
   twitterUrl: string = "https://twitter.com/quanghuy1242";
 
-  repos: Observable<any[]>;
+  repos: Observable<Repo[]>;
 
   constructor(
     private titleService: Title,
     private repoService: RepoService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.titleService.setTitle('About me');

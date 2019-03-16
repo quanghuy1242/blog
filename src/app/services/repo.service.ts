@@ -19,8 +19,8 @@ export class RepoService {
   ) { }
 
   /** GET all repo from quanghuy1242 */
-  getRepos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.githubAPI}/repos`).pipe(
+  getRepos(): Observable<Repo[]> {
+    return this.http.get<Repo[]>(`${this.githubAPI}/repos`).pipe(
       tap(_ => console.log('fetched repos')),
       catchError(this.handleError('getRepos', []))
     );

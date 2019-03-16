@@ -30,3 +30,12 @@
   height: 50px;
   resize: none;
 }
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #416275;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  margin: 0 1.5rem 0.5rem 1.5rem;
+}

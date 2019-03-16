@@ -3,4 +3,5 @@ export class Repo {
   name: string;
   html_url: string;
   language: string;
+  updated_at: Date
 }

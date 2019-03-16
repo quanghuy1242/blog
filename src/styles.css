@@ -69,9 +69,9 @@ mat-tab-body {
 .carousel-wrapper .mat-tab-label {
   background-color: red;
   opacity: 1;
-  min-width: 15px !important;
-  width: 15px;
-  height: 15px;
+  min-width: 10px !important;
+  width: 10px;
+  height: 10px;
   margin: 0 2px;
   border-radius: 50%;
   display: block;
@@ -84,4 +84,8 @@ mat-tab-body {
 
 .carousel-wrapper .mat-tab-header {
   border-bottom: none !important;
+}
+
+app-comment-item .mat-card-header-text {
+  margin-left: 7px !important;
 }

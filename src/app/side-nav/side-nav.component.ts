@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-import {BehaviorSubject, Observable, of as observableOf} from 'rxjs';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
 
 /**
  * Route Name class with nested structure
@@ -27,7 +27,8 @@ export class RouteFlatNode {
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
   "Research": {
-    "Face Detection": "/research/face-detection"
+    "Face Detection": "/",
+    "Mardown Editor": "/"
   },
   "About me": "/about"
 });
@@ -78,6 +79,7 @@ export class RouteDataBase {
   providers: [RouteDataBase]
 })
 export class SideNavComponent implements OnInit {
+
   treeControl: FlatTreeControl<RouteFlatNode>;
   treeFlattener: MatTreeFlattener<RouteNode, RouteFlatNode>;
   dataSource: MatTreeFlatDataSource<RouteNode, RouteFlatNode>;
@@ -95,6 +97,7 @@ export class SideNavComponent implements OnInit {
     this.treeControl = new FlatTreeControl<RouteFlatNode>(this._getLevel, this._isExpandable);
     this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
     this.database.dataChange.subscribe(data => this.dataSource.data = data);
+    this.treeControl.expandAll();
   }
   
   private _getLevel = (node: RouteFlatNode) => node.level;

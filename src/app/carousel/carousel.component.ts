@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
+  items = [
+    {
+      bgc: "yellow",
+      height: 300
+    },
+    {
+      bgc: "blue",
+      height: 300
+    },
+    {
+      bgc: "violet",
+      height: 300
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
