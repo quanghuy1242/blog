@@ -36,6 +36,7 @@ import { LoginComponent } from './login/login.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DialogInfoComponent } from './dialog-info/dialog-info.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
     LoginComponent,
     CarouselComponent,
     DialogInfoComponent,
+    RegisterComponent,
   ],
   entryComponents: [
     DialogInfoComponent,

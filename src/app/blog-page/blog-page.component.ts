@@ -4,7 +4,7 @@ import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
 import { Comment } from '../models/comment.model';
 import { Title } from '@angular/platform-browser';
-import { Router } from "@angular/router"
+import { Router } from "@angular/router";
 import { CommentService } from '../services/comment.service';
 import { AuthService } from '../services/auth.service';
 

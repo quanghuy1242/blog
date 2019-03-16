@@ -23,7 +23,7 @@ export class AuthService {
     })
   }
 
-  async login(email: string, password: string) {
+  login(email: string, password: string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
@@ -35,6 +35,10 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     return JSON.parse(localStorage.getItem('user')) !== null;
+  }
+
+  createNewUser(user: string, password: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(user, password);
   }
 
   UserInfo(): User {

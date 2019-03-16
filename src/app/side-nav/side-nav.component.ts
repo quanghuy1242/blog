@@ -27,8 +27,8 @@ export class RouteFlatNode {
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
   "Research": {
-    "Face Detection": "/",
-    "Markdown Editor": "/"
+    "Face Detection": "/404",
+    "Markdown Editor": "/404"
   },
   "About me": "/about"
 });

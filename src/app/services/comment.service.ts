@@ -22,7 +22,12 @@ export class CommentService {
   ) { }
 
   getCommentss(blogId: string): Observable<Comment[]> {
-    this.commentCollection = this.db.doc<Blog>(`blogs/${blogId}`).collection('comments');
+    this.commentCollection = this.db.doc<Blog>(`blogs/${blogId}`).collection('comments',  ref => ref.orderBy('date', 'desc'));
     return this.commentCollection.valueChanges();
+  }
+
+  postCommnetss(blogId: string, comment: Comment) {
+    this.commentCollection = this.db.doc<Blog>(`blogs/${blogId}`).collection('comments');
+    this.commentCollection.add({ name: comment.name, date: comment.date, content: comment.content });
   }
 }

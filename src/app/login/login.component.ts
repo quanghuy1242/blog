@@ -43,17 +43,18 @@ export class LoginComponent implements OnInit {
   }
 
   disableForm(): void {
+    this.loginActive = true;
     this.email.disable();
     this.password.disable();
   }
 
   enableForm(): void {
+    this.loginActive = false;
     this.email.enable();
     this.password.enable();
   }
 
   async login() {
-    this.loginActive = true;
     this.disableForm();
     if (this.getEmailError() === "" && this.getPassError() === "") {
       try {
@@ -64,7 +65,6 @@ export class LoginComponent implements OnInit {
           width: '300px',
           data: { title: 'Error', content: error }
         });
-        this.loginActive = false;
         this.enableForm();
       }
     }

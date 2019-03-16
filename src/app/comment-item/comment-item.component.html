@@ -1,8 +1,8 @@
-<mat-card class="comment-card">
+<mat-card class="comment-card" *ngIf="comment">
   <mat-card-header>
     <!-- <div mat-card-avatar class="comment-card-header-image"></div> -->
     <mat-card-title>{{comment.name}}</mat-card-title>
-    <mat-card-subtitle>{{comment.date}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="comment.date">{{comment.date.toDate() | date}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     {{comment.content}}

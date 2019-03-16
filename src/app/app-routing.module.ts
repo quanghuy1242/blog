@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { RegisterComponent } from './register/register.component';
 
 import { AuthGuard } from './guard/auth.guard';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'post/:id', component: BlogPageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'test', component: CarouselComponent, canActivate: [AuthGuard] },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },

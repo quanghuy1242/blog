@@ -6,7 +6,7 @@ Blog
 
 # Todo
 - ~~Page link for each post~~
-- Add comment, ~~share features~~
+- ~~Add comment,~~ ~~share features~~
 - ~~Add About me page~~
 - ~~Optimize UI for mobile devices~~
 - ~~Change icon~~

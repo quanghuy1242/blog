@@ -2,14 +2,14 @@
   <div class="comment-input-submit">
     <mat-card-header class="center">
       <div mat-card-avatar class="comment-card-header-image"></div>
-      <mat-card-title>Quang Huy</mat-card-title>
+      <mat-card-title>{{name}}</mat-card-title>
     </mat-card-header>
     <mat-form-field style="width: 100%">
-      <textarea matInput placeholder="Comments" class="comment-section"></textarea>
+      <textarea matInput placeholder="Comments" class="comment-section" #content></textarea>
     </mat-form-field>
     <div class="center comment-submit">
       <div class="spacer"></div>
-      <button mat-raised-button color="primary">Comment</button>
+      <button mat-raised-button color="primary" (click)="submitCommit(name, content.value); content.value = ''">Comment</button>
     </div>
   </div>
 </mat-card>
