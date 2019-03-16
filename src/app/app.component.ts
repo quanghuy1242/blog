@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+﻿import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.dialog.open(DialogInfoComponent, {
         width: '300px',
-        data: { title: 'Xin chào', content: "Chúc các bạn một ngày thật vui vẻ khi vào thăm một blog buồn!" }
+        data: { title: 'Xin chào', content: "Chúc các bạn một ngày thật vui vẻ!" }
       });
     });
   }
