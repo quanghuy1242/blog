@@ -28,7 +28,7 @@ const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
   "Research": {
     "Face Detection": "/",
-    "Mardown Editor": "/"
+    "Markdown Editor": "/"
   },
   "About me": "/about"
 });
