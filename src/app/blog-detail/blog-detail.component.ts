@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Blog } from '../models/blog.model';
+import { Count } from '../models/count';
 
 @Component({
   selector: 'app-blog-detail',
@@ -12,5 +13,10 @@ export class BlogDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  a() {
+  	Count.scrollYPostion = window.scrollY;
+  	console.log(Count.scrollYPostion);
   }
 }

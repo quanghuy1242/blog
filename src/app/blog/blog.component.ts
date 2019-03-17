@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
+import { Count } from '../models/count';
 
 @Component({
   selector: 'app-blog',
@@ -17,11 +18,16 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.blogService.getBlogsLength();
     this.getBlogs(this.blogService.c);
+    setTimeout(() => {
+      window.scrollTo(0, Count.scrollYPostion);
+    }, 500);
   }
 
   getBlogs(a: number): void {
     this.blogService.getBlogs(a).subscribe(
-      blogs => this.blogs = blogs
+      blogs => {
+        this.blogs = blogs;
+      }
     );
   }
 
