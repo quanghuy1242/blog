@@ -1,7 +1,7 @@
 <div id="{{blog.id}}" class='offset-top'></div>
 <mat-card>
   <mat-card-header>
-    <mat-card-title routerLink="/post/{{blog.id}}" matRipple>{{blog.title}}</mat-card-title>
+    <mat-card-title matRipple>{{blog.title}}</mat-card-title>
     <mat-card-subtitle>{{blog.day.toDate() | date}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -10,14 +10,14 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button routerLink="/post/{{blog.id}}">
+    <a mat-button routerLink="/post/{{blog.id}}">
       <mat-icon>more_horiz</mat-icon>
       Read more
-    </button>
-    <button mat-button routerLink="/post/{{blog.id}}">
+    </a>
+    <a mat-button routerLink="/post/{{blog.id}}">
       <mat-icon>insert_comment</mat-icon>
       Comment
-    </button>
+    </a>
     <app-button-share-menu 
       [blogId]="blog.id"
       [iconRev]="'share'"

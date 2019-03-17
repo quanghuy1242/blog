@@ -24,7 +24,7 @@ export class CommentSubmitComponent implements OnInit {
 
   submitCommit(name: string, content: string): void {
     if (content === "") return;
-    this.commentService.postCommnetss(this.id, { name: name, date: new Date(), content: content })
+    this.commentService.postCommnetss(this.id, { name: name, date: (new Date()) as unknown as Timestamp, content: content })
   }
 
 }

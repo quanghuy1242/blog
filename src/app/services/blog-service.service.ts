@@ -17,6 +17,7 @@ export class BlogServiceService {
   blogCollection: AngularFirestoreCollection<Blog>;
   blogDoc: AngularFirestoreDocument<Blog>;
   length: number = 0;
+  c: number = 4;
 
   constructor(
     private readonly db: AngularFirestore
