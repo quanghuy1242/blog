@@ -9,7 +9,7 @@
       {{blog.content.split('\n')[0]}}...
     </div>
     <div *ngIf="blog.isRichContent">
-      '{{blog.title}}' contains some rich contents, click 'Read more' to read full
+      {{blog.previewMardown}}
     </div>
   </mat-card-content>
   <mat-card-actions>

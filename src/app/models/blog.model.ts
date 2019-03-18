@@ -6,4 +6,5 @@ export class Blog {
   day: Timestamp;
   content: string;
   isRichContent?: boolean;
+  previewMardown?: string;
 }

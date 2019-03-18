@@ -3,6 +3,7 @@ import { Blog } from '../models/blog.model';
 
 import { Observable, of, Observer } from 'rxjs';
 import { map } from 'rxjs/operators';
+import MarkdownIt from 'markdown-it';
 
 import { 
   AngularFirestore,
@@ -18,6 +19,7 @@ export class BlogServiceService {
   blogDoc: AngularFirestoreDocument<Blog>;
   length: number = 0;
   currentLimit: number = 4;
+  md = new MarkdownIt();
 
   constructor(
     private readonly db: AngularFirestore
@@ -33,9 +35,13 @@ export class BlogServiceService {
     }
     return this.blogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
+        let previewMardown: string;
         const data = a.payload.doc.data() as Blog;
         const id = a.payload.doc.id;
-        return { id, ...data };
+        if (data.isRichContent) {
+          previewMardown = /[^[\>]+(?=<)/g.exec(this.md.render(data.content).split('\n')[0])[0];
+        }
+        return { id, ...data, previewMardown: previewMardown };
       }))
     );
   }

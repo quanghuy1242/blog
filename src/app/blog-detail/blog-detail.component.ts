@@ -9,10 +9,12 @@ import { Count } from '../models/count';
 })
 export class BlogDetailComponent implements OnInit {
   @Input() blog: Blog;
+  richContentPreview: string;
 
   constructor() { }
 
   ngOnInit() {
+    // this.richContentPreview = /[^[\>]+(?=<)/g.exec(this.md.render(this.blog.content).split('\n')[0])[0];
   }
 
   saveWindowPostision() {
