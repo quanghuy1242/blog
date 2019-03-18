@@ -5,4 +5,5 @@ export class Blog {
   title: string;
   day: Timestamp;
   content: string;
+  isRichContent?: boolean;
 }

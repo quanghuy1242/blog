@@ -12,11 +12,14 @@
       [textRev]="''">
     </app-button-share-menu>
   </div>
-  <div class="content">
+  <div class="content" *ngIf="!blog.isRichContent">
     <div *ngFor="let smallContent of blog.content.split('\n')" class="mat-h4">
       {{smallContent}}
       <div *ngIf="!smallContent" [style.height.rem]="1"></div>
     </div>
+  </div>
+  <div class="content mat-body" *ngIf="blog.isRichContent" [innerHTML]="richContent">
+    
   </div>
 </div>
 <app-comment-submit *ngIf="authService.isLoggedIn"></app-comment-submit>

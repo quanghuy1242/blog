@@ -2,15 +2,32 @@
   display: block;
 }
 
+app-carousel {
+  position: absolute;
+}
+
 .header-title {
+  background-image: url('../../assets/images/ima2.jpg');
   min-height: 300px;
+  position: relative;
+  /* width: 100vh; */
   background-color: #416275;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: 100%;
+  background-position-y: 100%;
+}
+
+.action {
+  margin-top: 50px;
 }
 
 .header-title-inner {
+  position: absolute;
+  /* z-index: 50; */
+  width: 100%;
+  top: 15px;
   text-align: center;
   margin-top: 9px;
   padding: 25px 0;
@@ -35,4 +52,11 @@
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-title {
+    min-height: 392px;
+    background-size: 200%;
+  }
 }

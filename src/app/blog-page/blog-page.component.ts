@@ -7,6 +7,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from "@angular/router";
 import { CommentService } from '../services/comment.service';
 import { AuthService } from '../services/auth.service';
+import MarkdownIt from 'markdown-it';
 
 @Component({
   selector: 'app-blog-page',
@@ -17,6 +18,8 @@ export class BlogPageComponent implements OnInit {
   blog: Blog;
   comments: Comment[];
   id: string;
+  richContent: string;
+  md = new MarkdownIt();
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +42,7 @@ export class BlogPageComponent implements OnInit {
         this.router.navigate(['/404']);
       } else {
         this.blog = blog;
+        this.richContent = this.md.render(this.blog.content);
         this.titleService.setTitle(blog.title + ' - Quang Huy');
       }
     });

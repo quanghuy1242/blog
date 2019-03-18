@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-title.component.css']
 })
 export class HeaderTitleComponent implements OnInit {
+  carouselItem = [
+    {
+      background: "violet",
+      height: 300
+    },
+    {
+      background: "yellow",
+      height: 300
+    },
+    {
+      background: "url('../../assets/images/cover2.jpg')",
+      height: 300
+    }
+  ];
 
   constructor() { }
 

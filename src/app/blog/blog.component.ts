@@ -17,9 +17,16 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
     this.blogService.getBlogsLength();
-    this.getBlogs(this.blogService.c);
+    this.getBlogs(this.blogService.currentLimit);
+    this.restoreWindowPostion();
+  }
+
+  restoreWindowPostion(): void {
     setTimeout(() => {
-      window.scrollTo(0, Count.scrollYPostion);
+      if (Count.detailEntered) {
+        window.scrollTo(0, Count.scrollYPostion);
+        Count.detailEntered = 0;
+      }
     }, 500);
   }
 
@@ -32,6 +39,6 @@ export class BlogComponent implements OnInit {
   }
 
   loadMore(): void {
-    this.getBlogs(this.blogService.c+=4);
+    this.getBlogs(this.blogService.currentLimit+=4);
   }
 }

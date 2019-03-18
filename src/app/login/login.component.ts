@@ -17,6 +17,21 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
   loginActive: boolean = false;
 
+  carouselItem = [
+    {
+      background: "violet",
+      height: 470
+    },
+    {
+      background: "white",
+      height: 470
+    },
+    {
+      background: "url('../../assets/images/cover2.jpg')",
+      height: 470
+    }
+  ];
+
   @ViewChild("btn") btnS: ElementRef;
 
   constructor(

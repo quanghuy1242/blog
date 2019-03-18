@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+export interface CarouselItem {
+  background: string;
+  height: number;
+};
 
 @Component({
   selector: 'app-carousel',
@@ -6,26 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
-
-  items = [
-    {
-      bgc: "yellow",
-      height: 300
-    },
-    {
-      bgc: "blue",
-      height: 300
-    },
-    {
-      bgc: "violet",
-      height: 300
-    }
-  ];
+  @Input() items: CarouselItem[];
+  currentIndex: number = 0;
 
   constructor() { }
 
   ngOnInit() {
+    this.changeIndex(3000);
+  }
 
+  changeIndex(milliseconds: number): void {
+    setInterval(() => {
+      if (this.currentIndex === this.items.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    }, milliseconds);
   }
 
 }

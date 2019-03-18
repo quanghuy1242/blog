@@ -15,8 +15,8 @@ export class BlogDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  a() {
+  saveWindowPostision() {
   	Count.scrollYPostion = window.scrollY;
-  	console.log(Count.scrollYPostion);
+    Count.detailEntered = 1;
   }
 }

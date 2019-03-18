@@ -44,3 +44,19 @@
 form mat-icon {
   color: #416275;
 }
+
+@media only screen and (max-width: 600px) {
+  .carousel {
+    display: none;
+  }
+
+  .login-form {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+
+  :host {
+    height: initial;
+  }
+}

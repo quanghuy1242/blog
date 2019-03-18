@@ -1,7 +1,7 @@
 <div class="carousel-wrapper">
-  <mat-tab-group mat-align-tabs="center">
+  <mat-tab-group mat-align-tabs="center" [selectedIndex]="currentIndex">
     <mat-tab *ngFor="let item of items">
-      <div [style.background-color]="item.bgc" [style.height.px]="300"></div>
+      <div [style.background]="item.background" [style.height.px]="item.height"></div>
     </mat-tab>
   </mat-tab-group>
 </div>

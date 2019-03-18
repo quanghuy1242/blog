@@ -17,7 +17,7 @@ export class BlogServiceService {
   blogCollection: AngularFirestoreCollection<Blog>;
   blogDoc: AngularFirestoreDocument<Blog>;
   length: number = 0;
-  c: number = 4;
+  currentLimit: number = 4;
 
   constructor(
     private readonly db: AngularFirestore
@@ -31,12 +31,10 @@ export class BlogServiceService {
     else {
       this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number));
     }
-    // this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc'));
     return this.blogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Blog;
         const id = a.payload.doc.id;
-        // this.length++;
         return { id, ...data };
       }))
     );
