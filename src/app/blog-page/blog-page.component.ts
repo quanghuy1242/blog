@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogServiceService } from '../services/blog-service.service';
 import { Blog } from '../models/blog.model';
@@ -12,7 +12,8 @@ import MarkdownIt from 'markdown-it';
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
-  styleUrls: ['./blog-page.component.css']
+  styleUrls: ['./blog-page.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BlogPageComponent implements OnInit {
   blog: Blog;

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng s -o",
-    "build": "ng build --prod --output-path docs --base-href \"https://quanghuy1242.github.io/blog/\"",
+    "build": "ng build --prod --output-path docs --base-href \"https://quanghuy1242.github.io/blog/\" && ncp docs/index.html docs/404.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -47,6 +47,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ncp": "^2.0.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",

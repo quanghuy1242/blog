@@ -37,6 +37,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { DialogInfoComponent } from './dialog-info/dialog-info.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
+import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { RegisterComponent } from './register/register.component';
     CarouselComponent,
     DialogInfoComponent,
     RegisterComponent,
+    SafeHtmlPipe
   ],
   entryComponents: [
     DialogInfoComponent,
