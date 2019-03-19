@@ -19,7 +19,11 @@ export class BlogPageComponent implements OnInit {
   comments: Comment[];
   id: string;
   richContent: string;
-  md = new MarkdownIt();
+  md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+  });
 
   constructor(
     private route: ActivatedRoute,

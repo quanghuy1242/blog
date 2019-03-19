@@ -19,7 +19,11 @@ export class BlogServiceService {
   blogDoc: AngularFirestoreDocument<Blog>;
   length: number = 0;
   currentLimit: number = 4;
-  md = new MarkdownIt();
+  md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+  });
 
   constructor(
     private readonly db: AngularFirestore
