@@ -13,7 +13,7 @@ import MarkdownIt from 'markdown-it';
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
   styleUrls: ['./blog-page.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class BlogPageComponent implements OnInit {
   blog: Blog;

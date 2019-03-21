@@ -1,3 +1,8 @@
+<mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Input your keyword">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
 <mat-tree #tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
     <a routerLink="{{node.url}}" mat-button matTreeNodeToggle class="tree-item-button">

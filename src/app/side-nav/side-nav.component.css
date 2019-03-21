@@ -2,3 +2,19 @@
   width: 100%;
   text-align: left;
 }
+
+mat-form-field {
+	width: calc(100% - 2rem);
+	margin: 1rem 1rem 0rem 1rem;
+}
+
+mat-icon {
+	cursor: pointer;
+	user-select: none;
+}
+
+mat-tree {
+	height: 71vh;
+    overflow-y: auto;
+}
+    
