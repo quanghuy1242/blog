@@ -12,9 +12,3 @@ mat-icon {
 	cursor: pointer;
 	user-select: none;
 }
-
-mat-tree {
-	height: 71vh;
-    overflow-y: auto;
-}
-    
