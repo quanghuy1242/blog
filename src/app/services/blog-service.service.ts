@@ -67,4 +67,21 @@ export class BlogServiceService {
     this.blogCollection.valueChanges().subscribe(c => this.length = c.length);
   }
 
+  /** GET blog with name */
+  searchBlogs(term: string): Observable<Blog[]> {
+    if(!term.trim()) { return of([]); }
+    return this.db.collection<Blog>("blogs", ref => 
+      ref
+        .orderBy("title")
+        .startAt(term)
+        .endAt(term + "\uf8ff")
+    ).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Blog;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    )
+  }
+
 }

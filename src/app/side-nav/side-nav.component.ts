@@ -1,7 +1,11 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
+import { BehaviorSubject, Observable, of as observableOf, Subject } from 'rxjs';
+import { BlogServiceService } from '../services/blog-service.service';
+import { Blog } from '../models/blog.model';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 /**
  * Route Name class with nested structure
@@ -26,10 +30,7 @@ export class RouteFlatNode {
  */
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
-  "Research": {
-    "Face Detection": "/404",
-    "Markdown Editor": "/404",
-  },
+  "Research": '/research',
   "About me": "/about"
 });
 
@@ -84,12 +85,21 @@ export class SideNavComponent implements OnInit {
   treeFlattener: MatTreeFlattener<RouteNode, RouteFlatNode>;
   dataSource: MatTreeFlatDataSource<RouteNode, RouteFlatNode>;
 
+  blogs$: Observable<Blog[]>;
+  public searchTerms = new Subject<string>();
+
   transformer = (node: RouteNode, level: number) => {
     return new RouteFlatNode(!!node.children, node.name, level, node.url);
   }
 
+  search (term: string): void {
+    this.searchTerms.next(term);
+  }
+
   constructor(
-    private database: RouteDataBase
+    private database: RouteDataBase,
+    private blogService: BlogServiceService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -98,6 +108,14 @@ export class SideNavComponent implements OnInit {
     this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
     this.database.dataChange.subscribe(data => this.dataSource.data = data);
     this.treeControl.expandAll();
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    this.blogs$ = this.searchTerms.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.blogService.searchBlogs(term))
+    );
   }
   
   private _getLevel = (node: RouteFlatNode) => node.level;

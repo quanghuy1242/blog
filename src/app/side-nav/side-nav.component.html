@@ -1,7 +1,7 @@
 <mat-form-field appearance="outline">
     <mat-label>Search</mat-label>
-    <input matInput placeholder="Input your keyword">
-    <mat-icon matSuffix>search</mat-icon>
+    <input matInput placeholder="Input your keyword" #searchBox (input)="search(searchBox.value)">
+    <mat-icon matSuffix (click)="searchBox.value = ''; searchTerms.next('')" *ngIf="searchBox.value">close</mat-icon>
   </mat-form-field>
 <mat-tree #tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
@@ -19,3 +19,8 @@
     </a>
   </mat-tree-node>
 </mat-tree>
+<mat-list role="list" class="search-result" [class.mat-elevation-z5]="searchBox.value">
+  <mat-list-item role="listitem" *ngFor="let blog of blogs$ | async">
+    <a mat-button routerLink="/post/{{blog.id}}">{{blog.title}}</a>
+  </mat-list-item>
+</mat-list>

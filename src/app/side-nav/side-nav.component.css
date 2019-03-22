@@ -12,3 +12,19 @@ mat-icon {
 	cursor: pointer;
 	user-select: none;
 }
+
+.search-result {
+  list-style: none;
+  top: 80px;
+  position: absolute;
+  overflow-x: hidden;
+  width: 267px;
+  background: white;
+  left: 1rem;
+}
+
+.search-result a {
+  overflow-x: hidden;
+  width: 100%;
+  text-align: left;
+}
