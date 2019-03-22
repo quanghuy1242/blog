@@ -12,12 +12,11 @@ Blog
 - ~~Change icon~~
 - ~~Add scrollspy when scroll post~~ **(Drop)**
 - ~~Add load more button(4 post/page)~~
-- Add search field (search by title)
+- ~~Add search field (search by title)~~
 - ~~Add Scrolline,~~ ~~share button at blog page~~
 - ~~Support rich content with Administration page~~
 - ~~Add welcome dialog~~
 - Add 'first published', 'category' property at blog
 - ~~Add Category filter side bar (filter by date post, category)~~ **(Drop)**
 - ~~Add real time notification~~ **(Drop)**
-- Comment bar at blog page
-- 
+- ~~Comment bar at blog page~~ **(Drop)**
