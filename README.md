@@ -1,8 +1,11 @@
-﻿# Blog
-Blog
+﻿# Quang Huy Blog
+Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 
-# Build 
-`npm run build`
+# Build and Deploy to Github Pages
+`ng build --prod --output-path docs --base-href \"https://quanghuy1242.github.io/blog/\" && ncp docs/index.html docs/404.html"`
+
+# Build
+`ng build --prod`
 
 # Todo
 - ~~Page link for each post~~
@@ -20,3 +23,6 @@ Blog
 - ~~Add Category filter side bar (filter by date post, category)~~ **(Drop)**
 - ~~Add real time notification~~ **(Drop)**
 - ~~Comment bar at blog page~~ **(Drop)**
+
+# Contribute
+Feel free to fork and start pull request
