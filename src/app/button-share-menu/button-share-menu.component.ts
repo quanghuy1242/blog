@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ButtonShareMenuComponent implements OnInit {
 
-  urlShared: string = window.location.origin + '/blog/post/';
+  urlShared: string = window.location.origin + '/post/';
   @Input() blogId: string;
   @Input() iconRev: string;
   @Input() textRev: string;
