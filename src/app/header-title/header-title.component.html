@@ -1,8 +1,7 @@
-﻿<div class="header-title">
-  <!-- <app-carousel [items]="carouselItem"></app-carousel> -->
+﻿<div class="header-title" [style.background-image]="backgroundImage">
   <div class="header-title-inner">
-    <h1 class="mat-display-3">Dark Blue Pattern</h1>
-    <div class="slogan mat-h3" matRipple>Đôi khi, có vệt sáng vụt qua rồi lại vỡ tan trên bầu trời đầy hy vọng</div>
+    <h1 class="mat-display-3">{{mainTitle}}</h1>
+    <div class="slogan mat-h3" matRipple>{{slogan}}</div>
     <div class="action">
       <button 
         mat-raised-button 

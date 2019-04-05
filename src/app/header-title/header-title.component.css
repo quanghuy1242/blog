@@ -7,7 +7,7 @@ app-carousel {
 }
 
 .header-title {
-  background-image: url('../../assets/images/ima2.jpg');
+  /* background-image: url('../../assets/images/ima2.jpg'); */
   min-height: 300px;
   position: relative;
   /* width: 100vh; */
