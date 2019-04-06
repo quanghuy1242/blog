@@ -9,7 +9,7 @@
 <div class="content-wrapper">
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Infomations">
-      <div [innerHTML]="(bio || '') | safeHtml"></div>
+      <div [innerHTML]="(bio || 'Loading...') | safeHtml"></div>
     </mat-tab>
     <mat-tab label="Contact">
       Các thông tin liên hệ: <br>

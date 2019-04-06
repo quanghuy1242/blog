@@ -1,7 +1,7 @@
 ﻿<div class="header-title" [style.background-image]="backgroundImage">
   <div class="header-title-inner">
-    <h1 class="mat-display-3">{{mainTitle}}</h1>
-    <div class="slogan mat-h3" matRipple>{{slogan}}</div>
+    <h1 class="mat-display-3">{{mainTitle || 'Quang Huy'}}</h1>
+    <div class="slogan mat-h3" matRipple>{{slogan || 'Quang Huy'}}</div>
     <div class="action">
       <button 
         mat-raised-button 

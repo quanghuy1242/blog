@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <div class="start">
       <button class="mobile-button" mat-icon-button (click)="snav.toggle()" *ngIf="isMobile"><mat-icon>menu</mat-icon></button>
-      <a routerLink="/home" mat-button class="main-title">{{mainTitle}}</a>
+      <a routerLink="/home" mat-button class="main-title">{{mainTitle || 'Quang Huy'}}</a>
     </div>
     <div class="end">
       <button mat-button [matMenuTriggerFor]="menu" matTooltip="Find me on the Internet">Find me</button>

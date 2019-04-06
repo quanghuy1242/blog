@@ -25,7 +25,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/custom-theme.scss"
+              "src/custom-theme.scss",
+              "src/github-markdown.css",
+              "node_modules/highlight.js/styles/vs.css"
             ],
             "scripts": [
             ],

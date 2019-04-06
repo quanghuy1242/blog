@@ -38,6 +38,7 @@ import { DialogInfoComponent } from './dialog-info/dialog-info.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
+import { HighlightCodeDirective } from './directives/highlight-code.directive';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
     CarouselComponent,
     DialogInfoComponent,
     RegisterComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    HighlightCodeDirective
   ],
   entryComponents: [
     DialogInfoComponent,
