@@ -23,4 +23,14 @@ export class CategoryService {
       }))
     )
   }
+
+  getCategory(id: string): Observable<Category> {
+    return this.db.doc<Category>(`categories/${id}`).snapshotChanges().pipe(
+      map(action => {
+        const data = action.payload.data() as Category;
+        const id = action.payload.id;
+        return { id, ...data };
+      })
+    )
+  }
 }

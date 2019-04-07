@@ -17,14 +17,8 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.blogService.currentLimit = 4;
-    if (!this.categoryInput) {
-      this.blogService.getBlogsLength();
-      this.getBlogs(this.blogService.currentLimit);
-    } else {
-      this.blogService.getBlogsLength(this.categoryInput);
-      this.getBlogs(this.blogService.currentLimit, this.categoryInput);
-    }
+    this.blogService.getBlogsLength(this.categoryInput);
+    this.getBlogs(this.blogService.currentLimit, this.categoryInput);
     this.restoreWindowPostion();
   }
 
@@ -38,20 +32,10 @@ export class BlogComponent implements OnInit {
   }
 
   getBlogs(a: number, c?: string): void {
-    if (!c) {
-      this.blogService.getBlogs(a).subscribe(blogs => this.blogs = blogs);
-    } else {
-       this.blogService.getBlogs(a, c).subscribe(blogs => this.blogs = blogs);
-    }
-    
-
+    this.blogService.getBlogs(a, c).subscribe(blogs => this.blogs = blogs);
   }
 
   loadMore(): void {
-    if (!this.categoryInput) {
-      this.getBlogs(this.blogService.currentLimit+=4);
-    } else {
-      this.getBlogs(this.blogService.currentLimit+=4, this.categoryInput);
-    }
+    this.getBlogs(this.blogService.currentLimit+=4, this.categoryInput);
   }
 }

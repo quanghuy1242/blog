@@ -1,4 +1,43 @@
-:host {
-	display: block;
-	margin: 1rem;
+app-blog {
+  margin: 1rem;
+}
+
+.not-found {
+  margin: 1rem;
+}
+
+.category-header {
+  font-family: 'Roboto';
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 350;
+  text-transform: uppercase;
+  font-stretch: extra-condensed;
+  letter-spacing: 9px;
+  margin-bottom: 1rem;
+}
+
+.category-des {
+  text-align: center;
+  line-height: 1.5;
+  font-size: small;
+  width: 70vh;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  background-color: rgb(0, 0, 0, 0.12);
 }

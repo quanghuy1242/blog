@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoryService } from '../services/category.service';
+import { Category } from '../models/category.model';
 
 @Component({
   selector: 'app-post-category',
@@ -8,13 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostCategoryComponent implements OnInit {
   id: string;
+  category: Category;
 
   constructor(
     private route: ActivatedRoute,
+    private categoryService: CategoryService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-  	this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.getCategory();
+  }
+
+  getCategory(): void {
+    this.categoryService.getCategory(this.id).subscribe(category => {
+      if (!category.id) { this.router.navigate(['/404']); }
+      else {
+        this.category = category;
+      }
+    });
   }
 
 }

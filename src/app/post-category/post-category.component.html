@@ -1,1 +1,6 @@
+<div class="category-header" [style.background-image]="'url(' + category?.imgUrl + ')'">
+  <div class="category-name">{{category?.name}}</div>
+  <div class="category-des">{{category?.description || category?.name}}</div>
+</div>
+<div *ngIf="!appBlog.blogs?.length" class="mat-body-2 not-found">Chưa có bài đăng nào!</div>
 <app-blog #appBlog [categoryInput]="id"></app-blog>

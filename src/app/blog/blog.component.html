@@ -1,3 +1,2 @@
-<div *ngIf="!blogs?.length" class="mat-body-2">Không có bài đăng nào!</div>
 <app-blog-detail *ngFor="let blog of blogs" [blog]="blog"></app-blog-detail>
 <button *ngIf="blogService.currentLimit < blogService.length" mat-raised-button color='primary' (click)="loadMore()">Load more</button>
