@@ -7,7 +7,7 @@
 	font-weight: 300;
 	height: 150px;
 	font-size: 25px;
-	background-color: aqua;
+	background-color: #416275;
 	margin-bottom: 0.5rem;
 	display: flex;
 	flex-direction: column;
@@ -15,7 +15,8 @@
 	justify-content: center;
 	color: #fff;
 	text-decoration: none;
-	transition: 0.5s;
+  transition: 0.5s;
+  background-position: 50% 50%;
 }
 
 .category-item:hover {

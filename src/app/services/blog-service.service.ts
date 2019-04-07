@@ -31,23 +31,12 @@ export class BlogServiceService {
   
   /** GET all blogs from server */
   getBlogs(number: number, categoryId?: string): Observable<Blog[]> {
-    if (number === -1) {
-      if (categoryId) {
-        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').where('category', '==', categoryId));
-      } else {
-        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc'));
-      }
-    }
-    else {
-      if (categoryId) {
-        console.log(categoryId);
-        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number).where('category', '==', categoryId));
-      } else {
-        console.log(categoryId);
-        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number));
-      }
-    }
-    return this.blogCollection.snapshotChanges().pipe(
+    return this.db.collection<Blog>("blogs", ref => {
+      let query = ref.orderBy('day', 'desc');
+      if (number !== -1) { query = query.limit(number) }
+      if (categoryId) { query = query.where('category', '==', categoryId) }
+      return query;
+    }).snapshotChanges().pipe(
       map(actions => actions.map(a => {
         let previewMardown: string;
         const data = a.payload.doc.data() as Blog;
@@ -73,12 +62,11 @@ export class BlogServiceService {
 
   /** GET length of collection */
   getBlogsLength(categoryId?: string): void {
-    if (categoryId) {
-      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.where('category', '==', categoryId));
-    } else {
-      this.blogCollection = this.db.collection<Blog>("blogs");
-    }
-    this.blogCollection.valueChanges().subscribe(c => this.length = c.length);
+    this.db.collection<Blog>('blogs', ref => {
+      let query: firebase.firestore.Query = ref;
+      if (categoryId) { query = ref.where('category', '==', categoryId) }
+      return query;
+    }).valueChanges().subscribe(c => this.length = c.length);
   }
 
   /** GET blog with name */
