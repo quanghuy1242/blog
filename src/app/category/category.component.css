@@ -17,6 +17,7 @@
 	text-decoration: none;
   transition: 0.5s;
   background-position: 50% 50%;
+  background-size: 100%;
 }
 
 .category-item:hover {

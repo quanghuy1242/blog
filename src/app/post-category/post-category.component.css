@@ -16,7 +16,6 @@ app-blog {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-size: 100%;
 }
 
 .category-name {
