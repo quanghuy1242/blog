@@ -1,0 +1,5 @@
+<div fxLayout="column" class="category">
+	<a routerLink="/category/{{category.id}}" *ngFor="let category of categories" class="category-item" [style.background-image]="'url(' + category.imgUrl + ')'">
+		<div>{{category.name}}</div>
+	</a>
+</div>

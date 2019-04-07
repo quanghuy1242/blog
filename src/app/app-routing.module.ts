@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { RegisterComponent } from './register/register.component';
+import { PostCategoryComponent } from './post-category/post-category.component'
 
 import { AuthGuard } from './guard/auth.guard';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'post/:id', component: BlogPageComponent },
+  { path: 'category/:id', component: PostCategoryComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

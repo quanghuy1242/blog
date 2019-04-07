@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material-module';
@@ -39,6 +40,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
 import { HighlightCodeDirective } from './directives/highlight-code.directive';
+import { CategoryComponent } from './category/category.component';
+import { PostCategoryComponent } from './post-category/post-category.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,9 @@ import { HighlightCodeDirective } from './directives/highlight-code.directive';
     DialogInfoComponent,
     RegisterComponent,
     SafeHtmlPipe,
-    HighlightCodeDirective
+    HighlightCodeDirective,
+    CategoryComponent,
+    PostCategoryComponent
   ],
   entryComponents: [
     DialogInfoComponent,
@@ -77,6 +82,7 @@ import { HighlightCodeDirective } from './directives/highlight-code.directive';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule

@@ -30,12 +30,22 @@ export class BlogServiceService {
   ) { }
   
   /** GET all blogs from server */
-  getBlogs(number: number): Observable<Blog[]> {
+  getBlogs(number: number, categoryId?: string): Observable<Blog[]> {
     if (number === -1) {
-      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc'));
+      if (categoryId) {
+        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').where('category', '==', categoryId));
+      } else {
+        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc'));
+      }
     }
     else {
-      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number));
+      if (categoryId) {
+        console.log(categoryId);
+        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number).where('category', '==', categoryId));
+      } else {
+        console.log(categoryId);
+        this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.orderBy('day', 'desc').limit(number));
+      }
     }
     return this.blogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -62,8 +72,12 @@ export class BlogServiceService {
   }
 
   /** GET length of collection */
-  getBlogsLength(): void {
-    this.blogCollection = this.db.collection<Blog>("blogs");
+  getBlogsLength(categoryId?: string): void {
+    if (categoryId) {
+      this.blogCollection = this.db.collection<Blog>("blogs", ref => ref.where('category', '==', categoryId));
+    } else {
+      this.blogCollection = this.db.collection<Blog>("blogs");
+    }
     this.blogCollection.valueChanges().subscribe(c => this.length = c.length);
   }
 

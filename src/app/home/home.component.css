@@ -10,7 +10,8 @@ app-side-bar {
 }
 
 app-blog {
-  padding: 1.5rem;
+  padding: 1rem;
+  padding-right: 0;
 }
 
 mat-spinner {
@@ -22,5 +23,11 @@ mat-spinner {
 }
 
 :host {
-  display: flex;
+  display: block !important;
+}
+
+@media only screen and (max-width: 960px) {
+	app-blog {
+	  padding-right: 1rem;
+	}
 }

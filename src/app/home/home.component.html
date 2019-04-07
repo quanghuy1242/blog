@@ -1,2 +1,5 @@
 <mat-spinner *ngIf="!appBlog.blogs"></mat-spinner>
-<app-blog #appBlog></app-blog>
+<div fxLayout="row" fxLayout.xs="column-reverse" fxLayout.sm="column-reverse" fxFlex>
+	<app-blog fxFlex="67" #appBlog [categoryInput]="null"></app-blog>
+	<app-category fxFlex="33"></app-category>
+</div>

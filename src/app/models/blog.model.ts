@@ -7,4 +7,5 @@ export class Blog {
   content: string;
   isRichContent?: boolean;
   previewMardown?: string;
+  category?: string;
 }

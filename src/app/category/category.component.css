@@ -1,0 +1,23 @@
+.category {
+	margin: 1rem;
+}
+
+.category-item {
+	font-family: Roboto;
+	font-weight: 300;
+	height: 150px;
+	font-size: 25px;
+	background-color: aqua;
+	margin-bottom: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.category-item:hover {
+	opacity: 0.7;
+}
