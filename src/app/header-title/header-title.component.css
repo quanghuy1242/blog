@@ -9,7 +9,7 @@ app-carousel {
 .header-title {
   /* background-image: url('../../assets/images/ima2.jpg'); */
   min-height: 300px;
-  position: relative;
+  /* position: relative; */
   /* width: 100vh; */
   background-color: #416275;
   display: flex;
@@ -24,7 +24,7 @@ app-carousel {
 }
 
 .header-title-inner {
-  position: absolute;
+  /* position: absolute; */
   /* z-index: 50; */
   width: 100%;
   top: 15px;
