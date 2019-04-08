@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content class="mat-typography">
+  <img [attr.src]="randomPath" alt="Welcome" width=200px>
+  <div class="spacer"></div>
+  <div class="welcome-text">{{data.content}}</div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Ok</button>
+</div>

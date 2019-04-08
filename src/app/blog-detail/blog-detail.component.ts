@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Blog } from '../models/blog.model';
 import { Count } from '../models/count';
+import { Category } from '../models/category.model';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -9,16 +11,22 @@ import { Count } from '../models/count';
 })
 export class BlogDetailComponent implements OnInit {
   @Input() blog: Blog;
-  richContentPreview: string;
+  category: Category;
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit() {
-    // this.richContentPreview = /[^[\>]+(?=<)/g.exec(this.md.render(this.blog.content).split('\n')[0])[0];
+    this.getCategory();
   }
 
   saveWindowPostision() {
   	Count.scrollYPostion = window.scrollY;
     Count.detailEntered = 1;
+  }
+
+  getCategory(): void {
+    this.categoryService.getCategory(this.blog.category).subscribe(category => this.category = category);
   }
 }

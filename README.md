@@ -1,8 +1,11 @@
 ﻿# Quang Huy Blog
 Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 
+# Before Deploy
+`npm install`
+
 # Build and Deploy to Github Pages
-`ng build --prod --output-path docs --base-href \"https://quanghuy1242.github.io/blog/\" && ncp docs/index.html docs/404.html"`
+`ng build --prod --output-path docs --base-href \"https://<username>.github.io/<reponame>/\" && ncp docs/index.html docs/404.html"`
 
 # Build
 `ng build --prod`
@@ -19,13 +22,14 @@ Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 - ~~Add Scrolline,~~ ~~share button at blog page~~
 - ~~Support rich content with Administration page~~
 - ~~Add welcome dialog~~
-- Add 'first published', 'category' property at blog
+- Add 'first published', ~~'category' property at blog~~
 - ~~Add Category filter side bar (filter by date post, category)~~ **(Drop)**
 - ~~Add real time notification~~ **(Drop)**
 - ~~Comment bar at blog page~~ **(Drop)**
 - Previous, Next button for each page of post
-- Split categories at homepage
-- Top highlight post at homepage
+- ~~Split categories at homepage~~
+- ~~Top highlight post at homepage~~ **(Drop)**
+- Add About blog
 
 # Contribute
 Feel free to fork and start pull request

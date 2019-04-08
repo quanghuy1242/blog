@@ -17,6 +17,7 @@ mat-card-title {
   margin-left: -0.5rem;
   transition: 0.5s;
   font-weight: bold;
+  margin-bottom: 0.2rem !important;
 }
 
 mat-card-title:hover {
@@ -29,4 +30,8 @@ mat-icon {
 
 mat-form-field {
   width: 100% !important;
+}
+
+.chip-collections {
+  margin-bottom: 0.5rem;
 }

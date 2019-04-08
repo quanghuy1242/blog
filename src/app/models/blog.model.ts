@@ -8,4 +8,5 @@ export class Blog {
   isRichContent?: boolean;
   previewMardown?: string;
   category?: string;
+  tags: Array<string>;
 }

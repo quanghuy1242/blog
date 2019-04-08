@@ -17,7 +17,8 @@ import {
   MatTreeModule,
   MatFormFieldModule,
   MatInputModule,
-  MatDialogModule
+  MatDialogModule,
+  MatChipsModule
 } from '@angular/material'
 
 @NgModule({
@@ -39,7 +40,8 @@ import {
     MatTreeModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule
   ]
 })
 

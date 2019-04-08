@@ -42,6 +42,7 @@ import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
 import { HighlightCodeDirective } from './directives/highlight-code.directive';
 import { CategoryComponent } from './category/category.component';
 import { PostCategoryComponent } from './post-category/post-category.component';
+import { DialogWelcomeComponent } from './dialog-welcome/dialog-welcome.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +70,12 @@ import { PostCategoryComponent } from './post-category/post-category.component';
     SafeHtmlPipe,
     HighlightCodeDirective,
     CategoryComponent,
-    PostCategoryComponent
+    PostCategoryComponent,
+    DialogWelcomeComponent
   ],
   entryComponents: [
     DialogInfoComponent,
+    DialogWelcomeComponent
   ],
   imports: [
     BrowserModule,

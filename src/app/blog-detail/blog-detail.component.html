@@ -2,7 +2,20 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title matRipple routerLink="/post/{{blog.id}}" (click)="saveWindowPostision()">{{blog.title}}</mat-card-title>
-    <mat-card-subtitle>{{blog.day.toDate() | date}}</mat-card-subtitle>
+    <mat-card-subtitle>
+      <div class="chip-collections">
+        <mat-chip-list>
+          <mat-chip routerLink="/category/{{category?.id}}" color="primary" selected>{{category?.name}}</mat-chip>
+          <div *ngIf="blog.tags">
+            <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
+          </div>
+          <mat-chip *ngIf="!blog.tags">No tags</mat-chip>
+        </mat-chip-list>
+      </div>
+      <div class="date-post">
+        {{blog.day.toDate() | date}}
+      </div>
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div *ngIf="!blog.isRichContent">
