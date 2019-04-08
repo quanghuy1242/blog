@@ -42,7 +42,8 @@ export class BlogServiceService {
         const data = a.payload.doc.data() as Blog;
         const id = a.payload.doc.id;
         if (data.isRichContent) {
-          previewMardown = /[^[\>]+(?=<)/g.exec(this.md.render(data.content).split('\n')[0])[0];
+        	let content: string = this.md.render(data.content).split('\n').join('');
+          previewMardown = /[^[>]+(?=<)/g.exec(content.split('\n')[0])[0];
         }
         return { id, ...data, previewMardown: previewMardown };
       }))
