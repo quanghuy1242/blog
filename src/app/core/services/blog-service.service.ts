@@ -11,9 +11,7 @@ import {
   AngularFirestoreDocument
  } from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BlogServiceService {
   blogCollection: AngularFirestoreCollection<Blog>;
   blogDoc: AngularFirestoreDocument<Blog>;

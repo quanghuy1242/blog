@@ -8,9 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RepoService {
   private githubAPI = 'https://api.github.com/users/quanghuy1242'
 

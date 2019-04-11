@@ -16,6 +16,7 @@ import { CategoryModule } from './category/category.module';
 import { HeaderTitleComponent } from './components/header-title/header-title.component';
 import { PostModule } from './post/post.module';
 import { AuthModule } from './auth/auth.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthModule } from './auth/auth.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    CoreModule,
     SharedModule,
     HomeModule,
     CategoryModule,

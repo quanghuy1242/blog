@@ -11,9 +11,7 @@ import {
   AngularFirestoreDocument
  } from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CommentService {
   commentCollection: AngularFirestoreCollection<Comment>;
 

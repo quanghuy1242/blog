@@ -3,9 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Configuration } from '../models/configuration.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ConfService {
   conf: Observable<Configuration>;
   constructor(
