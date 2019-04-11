@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogPageComponent } from './components/blog-page/blog-page.component';
 
 const routes: Routes = [
-  { path: 'post/:id', component: BlogPageComponent },
+  { path: ':id', component: BlogPageComponent },
 ];
 
 @NgModule({

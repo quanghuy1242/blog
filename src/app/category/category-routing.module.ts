@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostCategoryComponent } from './components/post-category/post-category.component';
 
 const routes: Routes = [
-  { path: 'category/:id', component: PostCategoryComponent },
+  { path: ':id', component: PostCategoryComponent },
 ];
 
 @NgModule({
