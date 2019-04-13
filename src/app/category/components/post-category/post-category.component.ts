@@ -28,7 +28,7 @@ export class PostCategoryComponent implements OnInit {
 
   getCategory(): void {
     this.categoryService.getCategory(this.id).subscribe(category => {
-      if (!category.id) { this.router.navigate(['/404']); } else {
+      if (!category.name) { this.router.navigate(['/404']); } else {
         if (this.nameId !== category.nameId) {
           this.router.navigate([`category/${category.nameId}/${category.id}`]);
           return;
