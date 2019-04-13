@@ -3,6 +3,7 @@ import { Blog } from '../../../core/models/blog.model';
 import { Count } from '../../../core/models/count';
 import { Category } from '../../../core/models/category.model';
 import { CategoryService } from '../../../core/services/category.service';
+import { stringModify } from '../../../util/stringModify';
 
 @Component({
   selector: 'app-blog-detail',
@@ -12,6 +13,7 @@ import { CategoryService } from '../../../core/services/category.service';
 export class BlogDetailComponent implements OnInit {
   @Input() blog: Blog;
   category: Category;
+  nextTitle: string;
 
   constructor(
     private categoryService: CategoryService
@@ -19,6 +21,7 @@ export class BlogDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getCategory();
+    this.nextTitle = stringModify.toUrlString(this.blog.title);
   }
 
   saveWindowPostision() {

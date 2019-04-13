@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../../core/services/category.service';
 import { Category } from '../../../core/models/category.model';
+import { stringModify } from '../../../util/stringModify';
 
 @Component({
   selector: 'app-post-category',
@@ -10,6 +11,7 @@ import { Category } from '../../../core/models/category.model';
 })
 export class PostCategoryComponent implements OnInit {
   id: string;
+  nameId: string;
   category: Category;
 
   constructor(
@@ -20,12 +22,17 @@ export class PostCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.nameId = this.route.snapshot.paramMap.get('name');
     this.getCategory();
   }
 
   getCategory(): void {
     this.categoryService.getCategory(this.id).subscribe(category => {
       if (!category.id) { this.router.navigate(['/404']); } else {
+        if (this.nameId !== category.nameId) {
+          this.router.navigate([`category/${category.nameId}/${category.id}`]);
+          return;
+        }
         this.category = category;
       }
     });

@@ -8,20 +8,24 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ButtonShareMenuComponent implements OnInit {
 
-  urlShared: string = window.location.origin + '/post/';
+  urlShared: string = window.location.origin;
   @Input() blogId: string;
   @Input() iconRev: string;
   @Input() textRev: string;
+  @Input() nextTitle: string;
   @Input() isIcon: boolean;
+  finalLink: string;
+  shareUrl: string;
 
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.shareUrl = name === 'facebook' ? 'https://www.facebook.com/sharer/sharer.php?u=' : 'https://twitter.com/intent/tweet?text=';
+    this.finalLink = `${this.shareUrl + this.urlShared}/${this.nextTitle}/${this.blogId}`
   }
 
   share(name: string): void {
-    const shareUrl = name === 'facebook' ? 'https://www.facebook.com/sharer/sharer.php?u=' : 'https://twitter.com/intent/tweet?text=';
-    window.open(shareUrl + this.urlShared + this.blogId, '_blank');
+    window.open(this.finalLink, '_blank');
   }
 
   onCopied(): void {

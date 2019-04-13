@@ -30,6 +30,8 @@ Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 - ~~Split categories at homepage~~
 - ~~Top highlight post at homepage~~ **(Drop)**
 - Add About blog
+- Add Tags panel to homepage, category page
+- Add property panel at post page
 
 # Contribute
 Feel free to fork and start pull request

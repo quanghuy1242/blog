@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 import { CommentService } from '../../../core/services/comment.service';
 import { AuthService } from '../../../core/services/auth.service';
 import MarkdownIt from 'markdown-it';
+import { stringModify } from '../../../util/stringModify';
 
 @Component({
   selector: 'app-blog-page',
@@ -19,6 +20,7 @@ export class BlogPageComponent implements OnInit {
   blog: Blog;
   comments: Comment[];
   id: string;
+  name: string;
   richContent: string;
   md = new MarkdownIt({
     html: true,
@@ -37,6 +39,7 @@ export class BlogPageComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.name = this.route.snapshot.paramMap.get('name');
     this.getBlog(this.id);
     this.getCommentsBlog(this.id);
   }
@@ -46,6 +49,11 @@ export class BlogPageComponent implements OnInit {
       if (!blog.title) {
         this.router.navigate(['/404']);
       } else {
+        let nameGetted: string = stringModify.toUrlString(blog.title);
+        if (nameGetted !== this.name) {
+          this.router.navigate([`post/${nameGetted}/${blog.id}`]);
+          return;
+        }
         this.blog = blog;
         this.richContent = this.md.render(this.blog.content);
         this.titleService.setTitle(blog.title + ' - Quang Huy');

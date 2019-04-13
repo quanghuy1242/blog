@@ -1,7 +1,7 @@
 <div id="{{blog.id}}" class='offset-top'></div>
 <mat-card>
   <mat-card-header>
-    <mat-card-title matRipple routerLink="/post/{{blog.id}}" (click)="saveWindowPostision()">{{blog.title}}</mat-card-title>
+    <mat-card-title matRipple routerLink="/post/{{nextTitle}}/{{blog.id}}" (click)="saveWindowPostision()">{{blog.title}}</mat-card-title>
     <mat-card-subtitle>
       <div class="chip-collections">
         <mat-chip-list>
@@ -26,11 +26,11 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <a mat-button routerLink="/post/{{blog.id}}" (click)="saveWindowPostision()">
+    <a mat-button routerLink="/post/{{nextTitle}}/{{blog.id}}" (click)="saveWindowPostision()">
       <mat-icon>more_horiz</mat-icon>
       Read more
     </a>
-    <a mat-button routerLink="/post/{{blog.id}}" (click)="saveWindowPostision()">
+    <a mat-button routerLink="/post/{{nextTitle}}/{{blog.id}}" (click)="saveWindowPostision()">
       <mat-icon>insert_comment</mat-icon>
       Comment
     </a>
@@ -38,7 +38,8 @@
       [blogId]="blog.id"
       [iconRev]="'share'"
       [textRev]="'Share'"
-      [isIcon]="true">
+      [isIcon]="true"
+      [nextTitle]="nextTitle">
     </app-button-share-menu>
   </mat-card-actions>
 </mat-card>
