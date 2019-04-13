@@ -21,6 +21,6 @@
 </mat-tree>
 <mat-list role="list" class="search-result" [class.mat-elevation-z5]="searchBox.value">
   <mat-list-item role="listitem" *ngFor="let blog of blogs$ | async">
-    <a mat-button routerLink="/post/{{blog.id}}">{{blog.title}}</a>
+    <a mat-button routerLink="/post/a/{{blog.id}}">{{blog.title}}</a>
   </mat-list-item>
 </mat-list>

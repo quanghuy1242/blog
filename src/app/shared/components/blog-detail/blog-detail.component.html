@@ -5,7 +5,7 @@
     <mat-card-subtitle>
       <div class="chip-collections">
         <mat-chip-list>
-          <mat-chip routerLink="/category/{{category?.id}}" color="primary" selected>{{category?.name}}</mat-chip>
+          <mat-chip routerLink="/category/{{category?.nameId}}/{{category?.id}}" color="primary" selected>{{category?.name}}</mat-chip>
           <div *ngIf="blog.tags">
             <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
           </div>
