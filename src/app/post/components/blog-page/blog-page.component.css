@@ -33,3 +33,26 @@
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+
+.property-section {
+  margin: 1.5rem;
+  padding-top: 0 !important;
+  border-top: 3px solid #416275;
+}
+
+.property-section-title {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.property-section-category-link {
+  cursor: pointer;
+}
+
+.property-section-category-link:hover {
+  text-decoration: underline;
+}
+
+.mat-subheader {
+  margin-top: 1rem
+}

@@ -6,9 +6,10 @@
       <div class="chip-collections">
         <mat-chip-list>
           <mat-chip routerLink="/category/{{category?.nameId}}/{{category?.id}}" color="primary" selected>{{category?.name}}</mat-chip>
-          <div *ngIf="blog.tags">
-            <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
+          <div *ngIf="blog?.tags">
+            <mat-chip *ngFor="let tag of blog?.tags.slice(0, 3)">{{tag}}</mat-chip>
           </div>
+          <mat-chip *ngIf="blog.tags?.length > 3">+{{blog.tags?.length - blog.tags.slice(0, 3)?.length}}</mat-chip>
           <mat-chip *ngIf="!blog.tags">No tags</mat-chip>
         </mat-chip-list>
       </div>

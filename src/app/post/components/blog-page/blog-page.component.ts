@@ -9,6 +9,8 @@ import { CommentService } from '../../../core/services/comment.service';
 import { AuthService } from '../../../core/services/auth.service';
 import MarkdownIt from 'markdown-it';
 import { StringModify } from '../../../util/stringModify';
+import { Category } from '../../../core/models/category.model';
+import { CategoryService } from '../../../core/services/category.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -22,6 +24,8 @@ export class BlogPageComponent implements OnInit {
   id: string;
   name: string;
   richContent: string;
+  category: Category;
+
   md = new MarkdownIt({
     html: true,
     linkify: true,
@@ -34,7 +38,8 @@ export class BlogPageComponent implements OnInit {
     private commentService: CommentService,
     private titleService: Title,
     private router: Router,
-    public authService: AuthService
+    public authService: AuthService,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit() {
@@ -55,6 +60,7 @@ export class BlogPageComponent implements OnInit {
           return;
         }
         this.blog = blog;
+        this.getCategory();
         this.richContent = this.md.render(this.blog.content);
         this.titleService.setTitle(blog.title + ' - Quang Huy');
       }
@@ -65,5 +71,11 @@ export class BlogPageComponent implements OnInit {
     this.commentService.getCommentss(this.id).subscribe(comments => {
       this.comments = comments;
     });
+  }
+
+  getCategory(): void {
+    this.categoryService
+      .getCategory(this.blog.category)
+      .subscribe(category => (this.category = category));
   }
 }

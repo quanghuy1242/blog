@@ -26,5 +26,25 @@
       appHighlightCode>
   </div>
 </div>
-<app-comment-submit *ngIf="authService.isLoggedIn"></app-comment-submit>
-<app-comment [comments]="comments"></app-comment>
+<mat-card class="property-section">
+  <mat-list role="list">
+    <h3 mat-subheader>Thông tin</h3>
+    <mat-list-item role="listitem">
+      <div class="property-section-title">Tags:</div>
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of blog?.tags">{{tag}}</mat-chip>
+        <mat-chip *ngIf="!blog?.tags">No tags</mat-chip>
+      </mat-chip-list>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <div class="property-section-title">Category:</div>
+      <div class="property-section-category-link" routerLink="/category/{{category?.nameId}}/{{category?.id}}">{{category?.name}}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Đăng bình luận</h3>
+    <app-comment-submit *ngIf="authService.isLoggedIn"></app-comment-submit>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Bình luận</h3>
+    <app-comment [comments]="comments"></app-comment>
+  </mat-list>
+</mat-card>
