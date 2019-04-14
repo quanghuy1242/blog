@@ -13,14 +13,14 @@ export class ButtonShareMenuComponent implements OnInit {
   @Input() textRev: string;
   @Input() nextTitle: string;
   @Input() isIcon: boolean;
-  urlShared: string = window.location.origin;
+  protocolHost: string = window.location.origin;
   finalLink: string;
   shareUrl: string;
 
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.finalLink = `${this.urlShared}/${this.nextTitle}/${this.blogId}`;
+    this.finalLink = `${this.protocolHost}/post/${this.nextTitle}/${this.blogId}`;
   }
 
   share(name: string): void {
