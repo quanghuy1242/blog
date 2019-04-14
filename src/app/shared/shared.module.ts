@@ -11,7 +11,7 @@ import { DialogWelcomeComponent } from './components/dialog-welcome/dialog-welco
 import { SafeHtmlPipe } from './pipes/safeHtml.pipe';
 import { HighlightCodeDirective } from './directives/highlight-code.directive';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from 'src/material-module';
+import { MaterialModule } from './material-module';
 import { RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';

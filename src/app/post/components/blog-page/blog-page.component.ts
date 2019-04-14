@@ -4,11 +4,11 @@ import { BlogServiceService } from '../../../core/services/blog-service.service'
 import { Blog } from '../../../core/models/blog.model';
 import { Comment } from '../../../core/models/comment.model';
 import { Title } from '@angular/platform-browser';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { CommentService } from '../../../core/services/comment.service';
 import { AuthService } from '../../../core/services/auth.service';
 import MarkdownIt from 'markdown-it';
-import { stringModify } from '../../../util/stringModify';
+import { StringModify } from '../../../util/stringModify';
 
 @Component({
   selector: 'app-blog-page',
@@ -49,7 +49,7 @@ export class BlogPageComponent implements OnInit {
       if (!blog.title) {
         this.router.navigate(['/404']);
       } else {
-        let nameGetted: string = stringModify.toUrlString(blog.title);
+        const nameGetted: string = StringModify.toUrlString(blog.title);
         if (nameGetted !== this.name) {
           this.router.navigate([`post/${nameGetted}/${blog.id}`]);
           return;
@@ -64,6 +64,6 @@ export class BlogPageComponent implements OnInit {
   getCommentsBlog(id: string): void {
     this.commentService.getCommentss(this.id).subscribe(comments => {
       this.comments = comments;
-    })
+    });
   }
 }

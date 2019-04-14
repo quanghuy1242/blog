@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import {
+  AngularFirestoreModule,
+  FirestoreSettingsToken
+} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AboutComponent } from './components/about/about.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { CategoryModule } from './category/category.module';
 import { HeaderTitleComponent } from './components/header-title/header-title.component';
-import { PostModule } from './post/post.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 
@@ -34,15 +34,10 @@ import { CoreModule } from './core/core.module';
     AngularFireAuthModule,
     CoreModule,
     SharedModule,
-    // HomeModule,
-    // PostModule,
     AuthModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  providers: [
-    { provide: FirestoreSettingsToken, useValue: {} },
-    Title
-  ],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }, Title],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

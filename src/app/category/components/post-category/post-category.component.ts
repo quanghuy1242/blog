@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../../core/services/category.service';
 import { Category } from '../../../core/models/category.model';
-import { stringModify } from '../../../util/stringModify';
+import { StringModify } from '../../../util/stringModify';
 
 @Component({
   selector: 'app-post-category',

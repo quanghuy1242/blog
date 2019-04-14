@@ -8,27 +8,34 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ButtonShareMenuComponent implements OnInit {
 
-  urlShared: string = window.location.origin;
   @Input() blogId: string;
   @Input() iconRev: string;
   @Input() textRev: string;
   @Input() nextTitle: string;
   @Input() isIcon: boolean;
+  urlShared: string = window.location.origin;
   finalLink: string;
   shareUrl: string;
 
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.shareUrl = name === 'facebook' ? 'https://www.facebook.com/sharer/sharer.php?u=' : 'https://twitter.com/intent/tweet?text=';
-    this.finalLink = `${this.shareUrl + this.urlShared}/${this.nextTitle}/${this.blogId}`
+    this.finalLink = `${this.urlShared}/${this.nextTitle}/${this.blogId}`;
   }
 
   share(name: string): void {
-    window.open(this.finalLink, '_blank');
+    this.shareUrl =
+      name === 'facebook'
+        ? 'https://www.facebook.com/sharer/sharer.php?u='
+        : 'https://twitter.com/intent/tweet?text=';
+    window.open(this.shareUrl + this.finalLink, '_blank');
   }
 
   onCopied(): void {
-    this.snackBar.open('The link of this post is copied to clipboard', 'Close', { duration: 2500 });
+    this.snackBar.open(
+      'The link of this post is copied to clipboard',
+      'Close',
+      { duration: 2500 }
+    );
   }
 }

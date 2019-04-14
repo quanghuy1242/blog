@@ -9,16 +9,14 @@ import { RepoService } from './services/repo.service';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   providers: [
-  	AuthService,
-  	BlogServiceService,
-  	CategoryService,
-  	CommentService,
-  	ConfService,
-  	RepoService
+    AuthService,
+    BlogServiceService,
+    CategoryService,
+    CommentService,
+    ConfService,
+    RepoService
   ]
 })
-export class CoreModule { }
+export class CoreModule {}
