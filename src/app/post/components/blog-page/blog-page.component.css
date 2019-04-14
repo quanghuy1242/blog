@@ -56,3 +56,8 @@
 .mat-subheader {
   margin-top: 1rem
 }
+
+.chip-wrapper {
+  min-height: 48px;
+  height: auto;
+}
