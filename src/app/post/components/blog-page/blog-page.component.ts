@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogServiceService } from '../../../core/services/blog-service.service';
 import { Blog } from '../../../core/models/blog.model';
 import { Comment } from '../../../core/models/comment.model';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { CommentService } from '../../../core/services/comment.service';
 import { AuthService } from '../../../core/services/auth.service';
@@ -11,6 +11,7 @@ import MarkdownIt from 'markdown-it';
 import { StringModify } from '../../../util/stringModify';
 import { Category } from '../../../core/models/category.model';
 import { CategoryService } from '../../../core/services/category.service';
+import removeMd from 'remove-markdown';
 
 @Component({
   selector: 'app-blog-page',
@@ -36,10 +37,11 @@ export class BlogPageComponent implements OnInit {
     private route: ActivatedRoute,
     private blogService: BlogServiceService,
     private commentService: CommentService,
-    private titleService: Title,
     private router: Router,
     public authService: AuthService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private meta: Meta,
+    private title: Title
   ) { }
 
   ngOnInit() {
@@ -62,7 +64,7 @@ export class BlogPageComponent implements OnInit {
         this.blog = blog;
         this.getCategory();
         this.richContent = this.md.render(this.blog.content);
-        this.titleService.setTitle(blog.title + ' - Quang Huy');
+        this.setMetaData(blog, nameGetted);
       }
     });
   }
@@ -77,5 +79,31 @@ export class BlogPageComponent implements OnInit {
     this.categoryService
       .getCategory(this.blog.category)
       .subscribe(category => (this.category = category));
+  }
+
+  setMetaData(data, nameGetted) {
+    this.title.setTitle(data.title + ' - Quang Huy');
+
+    let description = removeMd(data.content.split('\n')[0].split(' ').slice(0, 40).join(' '));
+    let image = "";
+    let rs = /!\[.*?\]\((.*?)\)/.exec(data.content) || /<img src="(.*?)" alt="(.*?)" \/>/.exec(data.content);
+    if (rs) { image = rs[1] }
+    else {
+      image = "https://raw.githubusercontent.com/quanghuy1242/MyLibary/master/images/cover2.jpg";
+    }
+
+    this.meta.updateTag({ 'name': 'keywords', 'content': 'Quang Huy Blog' });
+    this.meta.updateTag({ 'name': 'description', 'content': description });
+    this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
+    this.meta.updateTag({ 'name': 'twitter:title', 'content': data.title + ' - Quang Huy' });
+    this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.title + ' - Quang Huy' });
+    this.meta.updateTag({ 'name': 'twitter:description', 'content': description });
+    this.meta.updateTag({ 'name': 'twitter:image', 'content': image });
+    this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.title + ' - Quang Huy' });
+    this.meta.updateTag({ 'property': 'og:title', 'content' : data.title + ' - Quang Huy' });
+    this.meta.updateTag({ 'property': 'og:url', 'content': `https://quanghuy.netlify.com/post/${nameGetted}/${data.id}` });
+    this.meta.updateTag({ 'property': 'og:image', 'content': image });
+    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.title + ' - Quang Huy' });
+    this.meta.updateTag({ 'property': 'og:description', 'content': description });
   }
 }

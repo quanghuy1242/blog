@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { RepoService } from '../../core/services/repo.service';
 import { Observable, Subject } from 'rxjs';
 import { Repo } from '../../core/models/repo.model';
@@ -28,13 +28,13 @@ export class AboutComponent implements OnInit {
   repos: Observable<Repo[]>;
 
   constructor(
-    private titleService: Title,
     private repoService: RepoService,
-    public confService: ConfService
+    public confService: ConfService,
+    private meta: Meta,
+    private title: Title
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle('About me');
     this.repos = this.repoService.getRepos();
     this.getInfo();
   }
@@ -52,6 +52,29 @@ export class AboutComponent implements OnInit {
       this.wordpressUrl = conf.wordpressUrl;
       this.coverImg = conf.coverUrl;
       this.largeCoverImg = `url(${conf.largeCover})`;
+      this.setMetaData({
+        title: 'About me - Quang Huy',
+        description: 'Giới thiệu blog cá nhân',
+        image: conf.coverUrl
+      });
     })
+  }
+
+  setMetaData(data) {
+    this.title.setTitle(data.title);
+
+    this.meta.updateTag({ 'name': 'keywords', 'content': 'Quang Huy Blog' });
+    this.meta.updateTag({ 'name': 'description', 'content': data.description });
+    this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
+    this.meta.updateTag({ 'name': 'twitter:title', 'content': data.title });
+    this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.title });
+    this.meta.updateTag({ 'name': 'twitter:description', 'content': data.description });
+    this.meta.updateTag({ 'name': 'twitter:image', 'content': data.image });
+    this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.title });
+    this.meta.updateTag({ 'property': 'og:title', 'content' : data.title });
+    this.meta.updateTag({ 'property': 'og:url', 'content': `https://quanghuy.netlify.com/about` });
+    this.meta.updateTag({ 'property': 'og:image', 'content': data.image });
+    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.title });
+    this.meta.updateTag({ 'property': 'og:description', 'content': data.description });
   }
 }

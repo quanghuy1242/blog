@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../../core/services/category.service';
 import { Category } from '../../../core/models/category.model';
 import { StringModify } from '../../../util/stringModify';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-category',
@@ -17,7 +18,9 @@ export class PostCategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private meta: Meta,
+    private title: Title
   ) { }
 
   ngOnInit() {
@@ -34,8 +37,27 @@ export class PostCategoryComponent implements OnInit {
           return;
         }
         this.category = category;
+        this.setMetaData(category);
       }
     });
+  }
+
+  setMetaData(data) {
+    this.title.setTitle(data.name);
+
+    this.meta.updateTag({ 'name': 'keywords', 'content': 'Quang Huy Blog' });
+    this.meta.updateTag({ 'name': 'description', 'content': data.description });
+    this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
+    this.meta.updateTag({ 'name': 'twitter:title', 'content': data.name });
+    this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.name });
+    this.meta.updateTag({ 'name': 'twitter:description', 'content': data.description });
+    this.meta.updateTag({ 'name': 'twitter:image', 'content': data.imgUrl });
+    this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.name });
+    this.meta.updateTag({ 'property': 'og:title', 'content' : data.name });
+    this.meta.updateTag({ 'property': 'og:url', 'content': `https://quanghuy.netlify.com/category/${data.nameId}/${data.id}` });
+    this.meta.updateTag({ 'property': 'og:image', 'content': data.imgUrl });
+    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.name });
+    this.meta.updateTag({ 'property': 'og:description', 'content': data.description });
   }
 
 }

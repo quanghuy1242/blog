@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material';
 import { Count } from '../../../core/models/count'
 import { ConfService } from '../../../core/services/conf.service';
 import { DialogWelcomeComponent } from '../../../shared/components/dialog-welcome/dialog-welcome.component';
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,9 @@ export class HomeComponent implements OnInit {
   constructor(
   	private titleService: Title,
     public dialog: MatDialog,
-    public confService: ConfService
+    public confService: ConfService,
+    private meta: Meta,
+    private title: Title
   	) { }
 
   ngOnInit() {
@@ -28,6 +31,7 @@ export class HomeComponent implements OnInit {
     this.confService.getConf().subscribe(conf => {
       this.mainTitle = conf.mainTitle;
       this.titleService.setTitle(`${this.mainTitle} - Home`);
+      this.setMetaData(conf);
     })
   }
 
@@ -41,5 +45,23 @@ export class HomeComponent implements OnInit {
       });
     });
     Count.countDialogWelcome = 2;
+  }
+
+  setMetaData(data) {
+    this.title.setTitle(`${this.mainTitle} - Home`);
+
+    this.meta.updateTag({ 'name': 'keywords', 'content': 'Quang Huy Blog' });
+    this.meta.updateTag({ 'name': 'description', 'content': data.slogan });
+    this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
+    this.meta.updateTag({ 'name': 'twitter:title', 'content': data.mainTitle });
+    this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.mainTitle });
+    this.meta.updateTag({ 'name': 'twitter:description', 'content': data.slogan });
+    this.meta.updateTag({ 'name': 'twitter:image', 'content': data.homeImageUrl });
+    this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.mainTitle });
+    this.meta.updateTag({ 'property': 'og:title', 'content' : data.mainTitle });
+    this.meta.updateTag({ 'property': 'og:url', 'content': 'https://quanghuy.netlify.com/home' });
+    this.meta.updateTag({ 'property': 'og:image', 'content': data.homeImageUrl });
+    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.mainTitle });
+    this.meta.updateTag({ 'property': 'og:description', 'content': data.slogan });
   }
 }
