@@ -26,6 +26,30 @@
       appHighlightCode>
   </div>
 </div>
+
+<!-- Tách cái này ra -->
+<div class="pagination-wrapper">
+  <a mat-button *ngIf="relatePost?.prev" routerLink="/post/{{relatePost?.prev.nameId}}/{{relatePost?.prev.id}}" class="pagination-prev-sm">
+    <div class="button-wrapper">
+      <mat-icon class="icon-prev">arrow_back_ios</mat-icon>
+      <div class="text-wrapper">
+        <div class="subtitle subtitle-left">Trước</div>
+        <div class="pag-title">{{relatePost?.prev.title}}</div>
+      </div>
+    </div>
+  </a>
+  <div class="spacer"></div>
+  <a mat-button *ngIf="relatePost?.next" routerLink="/post/{{relatePost?.next.nameId}}/{{relatePost?.next.id}}" class="pagination-next-sm">
+    <div class="button-wrapper">
+      <div class="text-wrapper">
+        <div class="subtitle subtitle-right">Sau</div>
+        <div class="pag-title">{{relatePost?.next.title}}</div>
+      </div>
+      <mat-icon class="icon-next">arrow_forward_ios</mat-icon>
+    </div>
+  </a>
+</div>
+
 <mat-card class="property-section">
   <mat-list role="list">
     <h3 mat-subheader>Thông tin</h3>

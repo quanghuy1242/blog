@@ -61,3 +61,77 @@
   min-height: 48px;
   height: auto;
 }
+
+.pagination-wrapper {
+  display: flex;
+  margin: 0 1.5rem;
+  border-top: 1px solid;
+  border-color: rgb(0, 0, 0, 0.12);
+  padding-top: 0.5rem;
+}
+
+.pagination-wrapper .mat-button {
+  line-height: 30px;
+  max-width: 50%;
+  overflow-x: hidden;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-prev {
+  align-self: center;
+  margin-right: 0.5rem;
+  color: #416275;
+}
+
+.icon-next {
+  align-self: center;
+  margin-left: 0.5rem;
+  color: #416275;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #416275;
+}
+
+.subtitle-left {
+  text-align: left;
+}
+
+.subtitle-right {
+  text-align: right;
+}
+
+.pag-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 600px) {
+  .pagination-wrapper {
+    flex-direction: column;
+  }
+  .pagination-wrapper .mat-button {
+    text-align: left !important;
+  }
+  .subtitle {
+    text-align: left !important;
+  }
+  .pagination-next-sm {
+    align-self: flex-end;
+  }
+  .pagination-prev-sm {
+    align-self: flex-start;
+  }
+}

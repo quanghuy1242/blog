@@ -26,7 +26,7 @@ Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 - ~~Add Category filter side bar (filter by date post, category)~~ **(Drop)**
 - ~~Add real time notification~~ **(Drop)**
 - ~~Comment bar at blog page~~ **(Drop)**
-- ~~Previous, Next button for each page of post~~ **(Drop)**
+- ~~Previous, Next button for each page of post~~
 - ~~Split categories at homepage~~
 - ~~Top highlight post at homepage~~ **(Drop)**
 - Add About blog

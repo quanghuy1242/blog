@@ -12,6 +12,7 @@ import { StringModify } from '../../../util/stringModify';
 import { Category } from '../../../core/models/category.model';
 import { CategoryService } from '../../../core/services/category.service';
 import removeMd from 'remove-markdown';
+import { Timestamp } from '@firebase/firestore-types';
 
 @Component({
   selector: 'app-blog-page',
@@ -26,6 +27,11 @@ export class BlogPageComponent implements OnInit {
   name: string;
   richContent: string;
   category: Category;
+
+  relatePost: {
+    prev?: { id: string, title: string, nameId: string},
+    next?: { id: string, title: string, nameId: string},
+  } = {  };
 
   md = new MarkdownIt({
     html: true,
@@ -62,9 +68,36 @@ export class BlogPageComponent implements OnInit {
           return;
         }
         this.blog = blog;
+        // get category of post
         this.getCategory();
+        // rich content
         this.richContent = this.md.render(this.blog.content);
+        // set meta data
         this.setMetaData(blog, nameGetted);
+        // get relate posts
+        this.getRelate(blog.day);
+      }
+    });
+  }
+
+  getRelate(day: Timestamp): void {
+    // Get older post
+    this.blogService.getOlderNewerost(day, 'n').subscribe(post => {
+      if (post) {
+        this.relatePost.next = {
+          id: post.id,
+          title: post.title,
+          nameId: StringModify.toUrlString(post.title)
+        };
+      }
+    });
+    this.blogService.getOlderNewerost(day, 'o').subscribe(post => {
+      if (post) {
+        this.relatePost.prev = {
+          id: post.id,
+          title: post.title,
+          nameId: StringModify.toUrlString(post.title)
+        };
       }
     });
   }

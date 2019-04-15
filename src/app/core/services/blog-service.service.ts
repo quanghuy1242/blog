@@ -9,7 +9,10 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
   AngularFirestoreDocument
- } from '@angular/fire/firestore';
+} from '@angular/fire/firestore';
+import * as firebase from 'firebase';
+import { firestore } from 'firebase/app';
+import { Timestamp } from '@firebase/firestore-types';
 
 @Injectable()
 export class BlogServiceService {
@@ -25,8 +28,12 @@ export class BlogServiceService {
     return this.db
       .collection<Blog>('blogs', ref => {
         let query = ref.orderBy('day', 'desc');
-        if (limitNumber !== -1) { query = query.limit(limitNumber); }
-        if (categoryId) { query = query.where('category', '==', categoryId); }
+        if (limitNumber !== -1) {
+          query = query.limit(limitNumber);
+        }
+        if (categoryId) {
+          query = query.where('category', '==', categoryId);
+        }
         return query;
       })
       .snapshotChanges()
@@ -36,7 +43,7 @@ export class BlogServiceService {
             let previewMardown: string;
             const data = a.payload.doc.data() as Blog;
             const id = a.payload.doc.id;
-            previewMardown = removeMd(data.content.split('\n')[0]);
+            previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + '...';
             return { id, ...data, previewMardown };
           })
         )
@@ -57,23 +64,33 @@ export class BlogServiceService {
       );
   }
 
-  /** GET previous and next id of curent post */
-  getPrevNextPost(id: string): Observable<{ prev: string; curr: string; next: string }> {
+  /** GET newer id of curent post */
+  getOlderNewerost(date: Timestamp, str: string): Observable<Blog> {
     return this.db
-      .collection<Blog>('blogs', ref => ref.orderBy('day', 'desc'))
+      .collection<Blog>('blogs', ref => {
+        let query: firebase.firestore.Query = ref;
+        if (str === 'n') {
+          query = query
+            .orderBy('day', 'asc')
+            .where('day', '>', date)
+            .limit(1);
+        } else {
+          query = query
+            .orderBy('day', 'desc')
+            .where('day', '<', date)
+            .limit(1);
+        }
+        return query;
+      })
       .snapshotChanges()
       .pipe(
-        map(actions =>
-          actions
-            .map((a, index) => {
-              const curr = a.payload.doc.id;
-              if (id === curr) {
-                const prev = actions[index + 1] ? actions[index + 1].payload.doc.id : null;
-                const next = actions[index - 1] ? actions[index - 1].payload.doc.id : null;
-                return { prev, curr, next };
-              }
-            })
-            .find(value => value.curr === id)
+        map(
+          actions =>
+            actions.map(a => {
+              const data = a.payload.doc.data();
+              const id = a.payload.doc.id;
+              return { id, ...data };
+            })[0]
         )
       );
   }
