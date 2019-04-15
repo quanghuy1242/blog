@@ -119,7 +119,7 @@ export class BlogPageComponent implements OnInit {
 
     let description = removeMd(data.content.split('\n')[0].split(' ').slice(0, 40).join(' '));
     let image = "";
-    let rs = /!\[.*?\]\((.*?)\)/.exec(data.content) || /<img src="(.*?)" alt="(.*?)" \/>/.exec(data.content);
+    let rs = /!\[.*?\]\((.*?)\)/.exec(data.content) || /<img[^>]+src=['"]([^">]+)['"]/igm.exec(data.content);
     if (rs) { image = rs[1] }
     else {
       image = "https://raw.githubusercontent.com/quanghuy1242/MyLibary/master/images/cover2.jpg";
