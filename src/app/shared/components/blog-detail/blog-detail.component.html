@@ -10,7 +10,7 @@
             <mat-chip *ngFor="let tag of blog?.tags.slice(0, 3)">{{tag}}</mat-chip>
           </div>
           <mat-chip *ngIf="blog.tags?.length > 3">+{{blog.tags?.length - blog.tags.slice(0, 3)?.length}}</mat-chip>
-          <mat-chip *ngIf="!blog.tags">No tags</mat-chip>
+          <mat-chip *ngIf="!blog.tags || !blog.tags.length">No tags</mat-chip>
         </mat-chip-list>
       </div>
       <div class="date-post">

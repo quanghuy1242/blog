@@ -43,7 +43,7 @@ export class BlogServiceService {
             let previewMardown: string;
             const data = a.payload.doc.data() as Blog;
             const id = a.payload.doc.id;
-            previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + '...';
+            previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + ' ...';
             return { id, ...data, previewMardown };
           })
         )

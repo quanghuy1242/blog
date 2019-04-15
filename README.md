@@ -32,6 +32,7 @@ Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 - Add About blog
 - Add Tags panel to homepage, category page
 - ~~Add property panel at post page~~
+- Lỗi no tags
 
 # Contribute
 Feel free to fork and start pull request
