@@ -10,29 +10,8 @@ Welcome! Here you go: [Dark Blue Pattern](https://quanghuy.netlify.com)
 # Build
 `ng build --prod`
 
-# Todo
-- ~~Page link for each post~~
-- ~~Add comment,~~ ~~share features~~
-- ~~Add About me page~~
-- ~~Optimize UI for mobile devices~~
-- ~~Change icon~~
-- ~~Add scrollspy when scroll post~~ **(Drop)**
-- ~~Add load more button(4 post/page)~~
-- ~~Add search field (search by title)~~
-- ~~Add Scrolline,~~ ~~share button at blog page~~
-- ~~Support rich content with Administration page~~
-- ~~Add welcome dialog~~
-- Add 'first published', ~~'category' property at blog~~
-- ~~Add Category filter side bar (filter by date post, category)~~ **(Drop)**
-- ~~Add real time notification~~ **(Drop)**
-- ~~Comment bar at blog page~~ **(Drop)**
-- ~~Previous, Next button for each page of post~~
-- ~~Split categories at homepage~~
-- ~~Top highlight post at homepage~~ **(Drop)**
-- Add About blog
-- Add Tags panel to homepage, category page
-- ~~Add property panel at post page~~
-- Lỗi no tags
+# To do
+[To do for Angular Blog](https://learn-about-me-pug.herokuapp.com/blog/dark-blue-pattern---to-do-for-angular-blog/5cb6015131bfdf0017126f7f)
 
 # Contribute
 Feel free to fork and start pull request
