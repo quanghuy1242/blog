@@ -108,3 +108,7 @@ app-comment-item .mat-card-header-text {
 .mat-dialog-container {
   margin: 0.5rem;
 }
+
+.not-found {
+  margin: 1rem;
+}

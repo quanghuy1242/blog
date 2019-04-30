@@ -1,0 +1,11 @@
+app-blog-detail {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+

@@ -17,6 +17,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderTitleComponent } from './components/header-title/header-title.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     SharedModule,
     AuthModule,
+    SearchModule,
     AppRoutingModule
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }, Title],

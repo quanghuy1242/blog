@@ -1,0 +1,3 @@
+<div class="mat-body-2 not-found">Các kết quả tìm kiếm cho <b>{{query}}</b> </div>
+<div *ngIf="!blogs?.length" class="mat-body-2 not-found">Chưa có bài đăng nào!</div>
+<app-blog-detail *ngFor="let blog of blogs" [blog]="blog"></app-blog-detail>

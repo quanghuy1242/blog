@@ -2,10 +2,6 @@ app-blog {
   margin: 1rem;
 }
 
-.not-found {
-  margin: 1rem;
-}
-
 .category-header {
   font-family: 'Roboto', sans-serif;
   min-height: 300px;

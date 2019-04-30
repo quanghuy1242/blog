@@ -59,7 +59,7 @@
     <mat-list-item role="listitem" class="chip-wrapper">
       <div class="property-section-title">Tags:</div>
       <mat-chip-list>
-        <mat-chip *ngFor="let tag of blog?.tags">{{tag}}</mat-chip>
+        <mat-chip *ngFor="let tag of blog?.tags" routerLink="/search/tag/{{tag}}">{{tag}}</mat-chip>
         <mat-chip *ngIf="!blog?.tags || !blog?.tags.length">No tags</mat-chip>
       </mat-chip-list>
     </mat-list-item>

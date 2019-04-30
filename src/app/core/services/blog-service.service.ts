@@ -132,4 +132,15 @@ export class BlogServiceService {
         )
       );
   }
+
+  getPostByTag(tag: string): Observable<Blog[]> {
+    return this.db.collection<Blog>('blogs', ref =>
+      ref.orderBy('day', 'desc').where('tags', 'array-contains', tag)
+    ).snapshotChanges().pipe(map(actions => actions.map(a => {
+      const data = a.payload.doc.data() as Blog;
+      const id = a.payload.doc.id;
+      const previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + ' ...';
+      return { id, ...data, previewMardown };
+    })))
+  }
 }
