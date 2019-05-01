@@ -18,6 +18,6 @@ export class StringModify {
   }
 
   static toUrlString(str: string): string {
-    return this.xoaDau(str).replace(/\s/g, '-').toLowerCase();
+    return this.xoaDau(str).replace(/\s/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-]/g, '');
   }
 }
