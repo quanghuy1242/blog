@@ -30,7 +30,7 @@ export class RouteFlatNode {
  */
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
-  "Research": '/research',
+  "Category": '/category',
   "About me": "/about"
 });
 

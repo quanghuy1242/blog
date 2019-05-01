@@ -1,5 +1,5 @@
 <div fxLayout="column" class="category">
-	<a routerLink="/category/{{category.nameId}}/{{category.id}}" *ngFor="let category of categories" class="category-item" [style.background-image]="'url(' + category.imgUrl + ')'">
+	<a matRipple [matRippleColor]="'#ffffff20'" routerLink="/category/{{category.nameId}}/{{category.id}}" *ngFor="let category of categories" class="category-item mat-elevation-z3" [style.background-image]="'url(' + category.imgUrl + ')'">
 		<div>{{category.name}}</div>
 	</a>
 </div>

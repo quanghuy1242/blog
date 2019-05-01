@@ -44,7 +44,9 @@ export class BlogServiceService {
             const data = a.payload.doc.data() as Blog;
             const id = a.payload.doc.id;
             previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + ' ...';
-            return { id, ...data, previewMardown };
+            let rs = /!\[.*?\]\((.*?)\)/.exec(data.content) || /<img[^>]+src=['"]([^">]+)['"]/igm.exec(data.content);
+            const image = rs ? rs[1] : null;
+            return { id, ...data, previewMardown, image };
           })
         )
       );
@@ -140,7 +142,9 @@ export class BlogServiceService {
       const data = a.payload.doc.data() as Blog;
       const id = a.payload.doc.id;
       const previewMardown = removeMd(data.content.split('\n')[0].split(' ').slice(0, 60).join(' ')) + ' ...';
-      return { id, ...data, previewMardown };
+      let rs = /!\[.*?\]\((.*?)\)/.exec(data.content) || /<img[^>]+src=['"]([^">]+)['"]/igm.exec(data.content);
+      const image = rs ? rs[1] : null;
+      return { id, ...data, previewMardown, image };
     })))
   }
 }

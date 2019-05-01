@@ -9,4 +9,5 @@ export class Blog {
   previewMardown?: string;
   category?: string;
   tags: Array<string>;
+  image?: string;
 }

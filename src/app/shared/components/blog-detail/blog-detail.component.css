@@ -1,5 +1,5 @@
 mat-card {
-  border-top: 3px solid #416275;
+  /*border-top: 3px solid #416275;*/
 }
 
 .offset-top {
@@ -34,4 +34,5 @@ mat-form-field {
 
 .chip-collections {
   margin-bottom: 0.5rem;
+  margin-left: -0.2rem;
 }
