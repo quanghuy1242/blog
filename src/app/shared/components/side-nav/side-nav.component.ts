@@ -31,7 +31,7 @@ export class RouteFlatNode {
 const TREE_DATA = JSON.stringify({
   "Blogs": '/home',
   "Category": '/category',
-  "Showcase": 'https://project-showcase.netlify.com',
+  "Showcase": '/project-showcase',
   "About me": "/about"
 });
 
