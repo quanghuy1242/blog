@@ -15,7 +15,7 @@ app-carousel {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 100%;
+  background-size: cover;
   background-position-y: 100%;
 }
 
@@ -57,6 +57,5 @@ app-carousel {
 @media only screen and (max-width: 600px) {
   .header-title {
     min-height: 392px;
-    background-size: 200%;
   }
 }
